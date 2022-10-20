@@ -71,7 +71,7 @@
       "grealpath": "./.content/bin/grealpath"
     },
     "devDependencies": {
-      "@xpack-dev-tools/xbb-helper": "^0.6.0"
+      "@xpack-dev-tools/xbb-helper": "^0.7.0"
     },
     "properties": {
       "appName": "GNU realpath",
@@ -132,7 +132,7 @@
         "hidden": true,
         "devDependencies": {
           "@xpack-dev-tools/cmake": "3.22.6-1.1",
-          "@xpack-dev-tools/ninja-build": "9.1.0-1.1"
+          "@xpack-dev-tools/ninja-build": "1.11.1-1.1"
         }
       },
       "common-actions": {

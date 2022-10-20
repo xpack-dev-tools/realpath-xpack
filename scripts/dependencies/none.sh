@@ -1,52 +1,53 @@
-function build_coreutils()
+function build_libiconv()
 {
-  # https://www.gnu.org/software/coreutils/
-  # https://ftp.gnu.org/gnu/coreutils/
+  # https://www.gnu.org/software/libiconv/
+  # https://ftp.gnu.org/pub/gnu/libiconv/
 
-  # https://github.com/archlinux/svntogit-packages/blob/packages/coreutils/trunk/PKGBUILD
-  # https://archlinuxarm.org/packages/aarch64/coreutils/files/PKGBUILD
+  # https://github.com/archlinux/svntogit-community/blob/packages/libiconv/trunk/PKGBUILD
+  # https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=libiconv
 
-  # https://github.com/Homebrew/homebrew-core/blob/master/Formula/coreutils.rb
+  # https://github.com/Homebrew/homebrew-core/blob/master/Formula/libiconv.rb
 
-  # 2018-07-01, "8.30"
-  # 2019-03-10 "8.31"
-  # 2020-03-05, "8.32"
-  # 2021-09-24, "9.0"
-  # 2022-04-15, "9.1"
+  # 2011-08-07 1.14"
+  # 2017-02-02 "1.15"
+  # 2019-04-26 "1.16"
+  # 2022-05-15 "1.17"
 
-  local coreutils_version="$1"
+  local libiconv_version="$1"
+  local name_suffix=${2-''}
 
-  local coreutils_src_folder_name="coreutils-${coreutils_version}"
+  local libiconv_src_folder_name="libiconv-${libiconv_version}"
 
-  local coreutils_archive="${coreutils_src_folder_name}.tar.xz"
-  local coreutils_url="https://ftp.gnu.org/gnu/coreutils/${coreutils_archive}"
+  local libiconv_archive="${libiconv_src_folder_name}.tar.gz"
+  local libiconv_url="https://ftp.gnu.org/pub/gnu/libiconv/${libiconv_archive}"
 
-  local coreutils_folder_name="${coreutils_src_folder_name}"
+  local libiconv_folder_name="${libiconv_src_folder_name}${name_suffix}"
 
-  mkdir -pv "${XBB_LOGS_FOLDER_PATH}/${coreutils_folder_name}"
+  mkdir -pv "${XBB_LOGS_FOLDER_PATH}/${libiconv_folder_name}"
 
-  local coreutils_stamp_file_path="${XBB_STAMPS_FOLDER_PATH}/stamp-${coreutils_folder_name}-installed"
-  if [ ! -f "${coreutils_stamp_file_path}" ]
+  local libiconv_stamp_file_path="${XBB_STAMPS_FOLDER_PATH}/stamp-${libiconv_folder_name}-installed"
+  if [ ! -f "${libiconv_stamp_file_path}" ]
   then
 
     mkdir -pv "${XBB_SOURCES_FOLDER_PATH}"
     cd "${XBB_SOURCES_FOLDER_PATH}"
 
-    download_and_extract "${coreutils_url}" "${coreutils_archive}" \
-      "${coreutils_src_folder_name}"
+    download_and_extract "${libiconv_url}" "${libiconv_archive}" \
+      "${libiconv_src_folder_name}"
 
     (
-      mkdir -pv "${XBB_BUILD_FOLDER_PATH}/${coreutils_folder_name}"
-      cd "${XBB_BUILD_FOLDER_PATH}/${coreutils_folder_name}"
+      mkdir -pv "${XBB_BUILD_FOLDER_PATH}/${libiconv_folder_name}"
+      cd "${XBB_BUILD_FOLDER_PATH}/${libiconv_folder_name}"
 
       xbb_activate_installed_dev
 
       CPPFLAGS="${XBB_CPPFLAGS}"
-      CFLAGS="${XBB_CFLAGS_NO_W}"
+      # -fgnu89-inline fixes "undefined reference to `aliases2_lookup'"
+      #  https://savannah.gnu.org/bugs/?47953
+      CFLAGS="${XBB_CFLAGS_NO_W} -fgnu89-inline"
       CXXFLAGS="${XBB_CXXFLAGS_NO_W}"
 
-      # LDFLAGS="${XBB_LDFLAGS_APP_STATIC_GCC}"
-      LDFLAGS="${XBB_LDFLAGS_APP}"
+      LDFLAGS="${XBB_LDFLAGS_LIB}"
       if [ "${XBB_TARGET_PLATFORM}" == "linux" ]
       then
         LDFLAGS+=" -Wl,-rpath,${LD_LIBRARY_PATH}"
@@ -66,42 +67,30 @@ function build_coreutils()
           fi
 
           echo
-          echo "Running coreutils configure..."
+          echo "Running libiconv${name_suffix} configure..."
 
           if [ "${XBB_IS_DEVELOP}" == "y" ]
           then
-            run_verbose bash "${XBB_SOURCES_FOLDER_PATH}/${coreutils_src_folder_name}/configure" --help
-          fi
-
-          if [ "${HOME}" == "/root" ]
-          then
-            # configure: error: you should not run configure as root
-            # (set FORCE_UNSAFE_CONFIGURE=1 in environment to bypass this check)
-            export FORCE_UNSAFE_CONFIGURE=1
+            run_verbose bash "${XBB_SOURCES_FOLDER_PATH}/${libiconv_src_folder_name}/configure" --help
           fi
 
           config_options=()
 
-          config_options+=("--prefix=${XBB_BINARIES_INSTALL_FOLDER_PATH}")
-          config_options+=("--libdir=${XBB_LIBRARIES_INSTALL_FOLDER_PATH}/lib")
-          config_options+=("--includedir=${XBB_LIBRARIES_INSTALL_FOLDER_PATH}/include")
-          # config_options+=("--datarootdir=${XBB_LIBRARIES_INSTALL_FOLDER_PATH}/share")
-          config_options+=("--mandir=${XBB_LIBRARIES_INSTALL_FOLDER_PATH}/share/man")
+          config_options+=("--prefix=${XBB_BINARIES_INSTALL_FOLDER_PATH}${name_suffix}")
+          config_options+=("--libdir=${XBB_LIBRARIES_INSTALL_FOLDER_PATH}${name_suffix}/lib")
+          config_options+=("--includedir=${XBB_LIBRARIES_INSTALL_FOLDER_PATH}${name_suffix}/include")
+          # config_options+=("--datarootdir=${XBB_LIBRARIES_INSTALL_FOLDER_PATH}${name_suffix}/share")
+          config_options+=("--mandir=${XBB_LIBRARIES_INSTALL_FOLDER_PATH}${name_suffix}/share/man")
 
           config_options+=("--build=${XBB_BUILD}")
-          config_options+=("--host=${XBB_HOST}")
+          if [ "${name_suffix}" == "-bootstrap" ]
+          then
+            # The bootstrap binaries will run on the build machine.
+            config_options+=("--host=${XBB_BUILD}")
+          else
+            config_options+=("--host=${XBB_HOST}")
+          fi
           config_options+=("--target=${XBB_TARGET}")
-
-          config_options+=("--without-selinux") # HB
-
-          config_options+=("--with-universal-archs=${XBB_TARGET_BITS}-bit")
-          config_options+=("--with-computed-gotos")
-          config_options+=("--with-dbmliborder=gdbm:ndbm")
-
-          # config_options+=("--with-openssl") # Arch
-          config_options+=("--with-openssl=no")
-
-          config_options+=("--with-gmp") # HB
 
           config_options+=("--disable-debug") # HB
           config_options+=("--disable-dependency-tracking") # HB
@@ -112,92 +101,54 @@ function build_coreutils()
 
           config_options+=("--disable-nls")
 
-          if [ "${XBB_TARGET_PLATFORM}" == "darwin" ]
-          then
-            # This is debatable, to either keep the original names
-            # (and avoid ar) or to prefix everything with g (like HB).
+          config_options+=("--enable-static") # HB
+          config_options+=("--enable-extra-encodings") # Arch
 
-            # config_options+=("--program-prefix=g") # HB
-            # `ar` must be excluded, it interferes with Apple similar program.
-            config_options+=("--enable-no-install-program=ar")
-          fi
+          # Fails on macOS:
+          # /bin/bash: /Users/ilg/Work/xbb-bootstrap-4.0.0/darwin-arm64/sources/libiconv-1.16/libcharset/build-aux/libtool-reloc: No such file or directory
+          # config_options+=("--enable-relocatable")
 
-          # --enable-no-install-program=groups,hostname,kill,uptime # Arch
-
-          run_verbose bash ${DEBUG} "${XBB_SOURCES_FOLDER_PATH}/${coreutils_src_folder_name}/configure" \
+          run_verbose bash ${DEBUG} "${XBB_SOURCES_FOLDER_PATH}/${libiconv_src_folder_name}/configure" \
             "${config_options[@]}"
 
-          cp "config.log" "${XBB_LOGS_FOLDER_PATH}/${coreutils_folder_name}/config-log-$(ndate).txt"
-        ) 2>&1 | tee "${XBB_LOGS_FOLDER_PATH}/${coreutils_folder_name}/configure-output-$(ndate).txt"
+          cp "config.log" "${XBB_LOGS_FOLDER_PATH}/${libiconv_folder_name}/config-log-$(ndate).txt"
+        ) 2>&1 | tee "${XBB_LOGS_FOLDER_PATH}/${libiconv_folder_name}/configure-output-$(ndate).txt"
       fi
 
       (
         echo
-        echo "Running coreutils make..."
+        echo "Running libiconv${name_suffix} make..."
 
         # Build.
         run_verbose make -j 1 # ${XBB_JOBS}
-        # run_verbose make -j ${XBB_JOBS}
 
-        if [ "${XBB_COREUTILS_INSTALL_REALPATH_ONLY:-}" == "y" ]
+        if [ "${XBB_WITH_TESTS}" == "y" ]
         then
-          run_verbose install -v -d \
-            "${XBB_BINARIES_INSTALL_FOLDER_PATH}/bin"
-          run_verbose install -v -c -m 755 src/realpath \
-            "${XBB_BINARIES_INSTALL_FOLDER_PATH}/bin/grealpath"
-          run_verbose install -v -c -m 755 src/readlink \
-            "${XBB_BINARIES_INSTALL_FOLDER_PATH}/bin/greadlink"
-        else
-          if [ "${XBB_TARGET_PLATFORM}" == "darwin" ]
-          then
-            # Strip fails with:
-            # 2022-10-01T12:53:19.6394770Z /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip: error: symbols referenced by indirect symbol table entries that can't be stripped in: /Users/ilg/Work/xbb-bootstrap-4.0/darwin-arm64/install/xbb-bootstrap/libexec/coreutils/_inst.24110_
-            run_verbose make install
-          else
-            if [ "${XBB_WITH_STRIP}" == "y" ]
-            then
-              run_verbose make install-strip
-            else
-              run_verbose make install
-            fi
-          fi
+          run_verbose make -j1 check
         fi
 
-        # Takes very long and fails.
-        # x86_64: FAIL: tests/misc/chroot-credentials.sh
-        # x86_64: ERROR: tests/du/long-from-unreadable.sh
-        # WARN-TEST
-        # make -j1 check
+        if [ "${XBB_WITH_STRIP}" == "y" ]
+        then
+          run_verbose make install-strip
+        else
+          run_verbose make install
+        fi
 
-      ) 2>&1 | tee "${XBB_LOGS_FOLDER_PATH}/${coreutils_folder_name}/make-output-$(ndate).txt"
+      ) 2>&1 | tee "${XBB_LOGS_FOLDER_PATH}/${libiconv_folder_name}/make-output-$(ndate).txt"
 
-      copy_license \
-        "${XBB_SOURCES_FOLDER_PATH}/${coreutils_src_folder_name}" \
-        "${coreutils_folder_name}"
+      if [ -z "${name_suffix}" ]
+      then
+        copy_license \
+          "${XBB_SOURCES_FOLDER_PATH}/${libiconv_src_folder_name}" \
+          "${libiconv_folder_name}"
+      fi
+
     )
 
-    (
-      if [ "${XBB_COREUTILS_INSTALL_REALPATH_ONLY:-}" == "y" ]
-      then
-        test_coreutils_realpath "${XBB_BINARIES_INSTALL_FOLDER_PATH}/bin"
-      else
-        test_coreutils "${XBB_BINARIES_INSTALL_FOLDER_PATH}/bin"
-      fi
-    ) 2>&1 | tee "${XBB_LOGS_FOLDER_PATH}/${coreutils_folder_name}/test-output-$(ndate).txt"
-
-    hash -r
-
     mkdir -pv "${XBB_STAMPS_FOLDER_PATH}"
-    touch "${coreutils_stamp_file_path}"
+    touch "${libiconv_stamp_file_path}"
 
   else
-    echo "Component coreutils already installed."
-  fi
-
-  if [ "${XBB_COREUTILS_INSTALL_REALPATH_ONLY:-}" == "y" ]
-  then
-    tests_add "test_coreutils_realpath" "${XBB_BINARIES_INSTALL_FOLDER_PATH}/bin"
-  else
-    tests_add "test_coreutils" "${XBB_BINARIES_INSTALL_FOLDER_PATH}/bin"
+    echo "Library libiconv${name_suffix} already installed."
   fi
 }

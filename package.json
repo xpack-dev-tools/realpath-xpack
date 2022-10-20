@@ -71,7 +71,7 @@
       "grealpath": "./.content/bin/grealpath"
     },
     "devDependencies": {
-      "@xpack-dev-tools/xbb-helper": "^0.7.0"
+      "@xpack-dev-tools/xbb-helper": "^0.7.1"
     },
     "properties": {
       "appName": "GNU realpath",

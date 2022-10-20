@@ -73,8 +73,8 @@ jobs:
         timeout-minutes: 1440
         run: |
           xpm install --config linux-x64
-          xpm run build --config linux-x64
-    
+          xpm run build-develop --config linux-x64
+
       - name: 'Publish pre-release'
         # https://github.com/ncipollo/release-action
         uses: ncipollo/release-action@v1

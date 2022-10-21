@@ -7,8 +7,8 @@ summary: "Version **{{ XBB_RELEASE_VERSION }}** is a maintenance release; it fix
 
 summary: "Version **{{ XBB_RELEASE_VERSION }}** is a new release; it follows the upstream release."
 
-ninja_version: 1.11.1
-ninja_date: 30 Aug 2022
+coreutils_version: 9.1
+coreutils_date: 2022-04-15
 version: "{{ XBB_RELEASE_VERSION }}"
 npm_subversion: 1
 download_url: https://github.com/xpack-dev-tools/realpath-xpack/releases/tag/v{{ XBB_RELEASE_VERSION }}/
@@ -32,7 +32,7 @@ tags:
 is a standalone cross-platform binary distribution of
 [GNU realpath](http://realpath.org).
 
-There are separate binaries for **Windows** (Intel 64-bit),
+There are separate binaries for
 **macOS** (Intel 64-bit, Apple Silicon 64-bit)
 and **GNU/Linux** (Intel 64-bit, Arm 32/64-bit).
 
@@ -52,9 +52,6 @@ The binary files are available from GitHub [Releases]({% raw %}{{ page.download_
 - GNU/Linux Arm 32/64-bit: any system with **GLIBC 2.27** or higher
   (like Raspberry Pi OS, Ubuntu 18 or later, Debian 10 or later, RedHat 8 later,
   Fedora 29 or later, etc)
-- Intel Windows 64-bit: Windows 7 with the Universal C Runtime
-  ([UCRT](https://support.microsoft.com/en-us/topic/update-for-universal-c-runtime-in-windows-c0514201-7fe6-95a3-b0a5-287930f3560c)),
-  Windows 8, Windows 10
 - Intel macOS 64-bit: 10.13 or later
 - Apple Silicon macOS 64-bit: 11.6 or later
 
@@ -122,14 +119,12 @@ The xPack GNU realpath generally follows the official
 
 The current version is based on:
 
-- GNU realpath version {% raw %}{{ page.ninja_version }}{% endraw %}
-from {% raw %}{{ page.ninja_version }}{% endraw %}.
+- GNU realpath version {% raw %}{{ page.coreutils_version }}{% endraw %}
+from {% raw %}{{ page.coreutils_date }}{% endraw %}.
 
 ## Changes
 
-Compared to the upstream version, the Windows version also supports
-spawning scripts via `cmd.exe /c`. These scripts are used by **npm**/**xpm**
-to redirect invocations to the central packages repository.
+Compared to the upstream version, there are no functional changes.
 
 ## Bug fixes
 

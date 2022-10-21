@@ -173,11 +173,11 @@
         },
         "actions": {
           "build": [
-            "apt-get install --yes make libc6-dev libstdc++6",
+            "[ -f "/.dockerenv" ] && apt-get install --yes make",
             "{{ properties.commandBashBuild }}"
           ],
           "build-develop": [
-            "apt-get install --yes make libc6-dev libstdc++6",
+            "[ -f "/.dockerenv" ] && apt-get install --yes make",
             "{{ properties.commandBashBuild }} --develop"
           ]
         }

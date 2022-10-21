@@ -1,6 +1,6 @@
 {
   "name": "@xpack-dev-tools/realpath",
-  "version": "9.1.0-1.1-pre",
+  "version": "9.1.0-1.1",
   "description": "A binary xPack with the GNU realpath executables",
   "main": "",
   "scripts": {

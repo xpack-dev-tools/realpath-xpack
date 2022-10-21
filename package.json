@@ -42,23 +42,23 @@
       "platforms": {
         "darwin-arm64": {
           "fileName": "xpack-realpath-9.1.0-1-darwin-arm64.tar.gz",
-          "sha256": "02c2051b8956faf04fbefc0b17bc94291984a1b1a4acbe9610b5e1090f77bd73"
+          "sha256": "a891fe75298e141b85fd2a8d8351b13fddc0fc44ce80ecd4a938f5e35c4d6ffa"
         },
         "darwin-x64": {
           "fileName": "xpack-realpath-9.1.0-1-darwin-x64.tar.gz",
-          "sha256": "08fc1f11f4ceaf13a655c662ade4cd71f7f14b8952a0095a413fd0d81c926910"
+          "sha256": "8c5adeb15ade882fd638f237e3049b3cc2065661a37b575a930b6efebb77cab7"
         },
         "linux-arm64": {
           "fileName": "xpack-realpath-9.1.0-1-linux-arm64.tar.gz",
-          "sha256": "f39bfdeee193b16d1add18aef7d9477512b12572957c4c5f7003a15fd5444476"
+          "sha256": "c48ad71f26d9cdc7d09715f58f24c69bda61edf65d4d899f33a4e5b3a081b5a3"
         },
         "linux-arm": {
           "fileName": "xpack-realpath-9.1.0-1-linux-arm.tar.gz",
-          "sha256": "49a7292f7af4a5635a4e510ad59d2d0db248696ef7ab51bb22ef7a68471dc475"
+          "sha256": "acdbe87fd262803862e9c3dfcd422604bb54d13731d88f631c136ed8e1c96c1f"
         },
         "linux-x64": {
           "fileName": "xpack-realpath-9.1.0-1-linux-x64.tar.gz",
-          "sha256": "bbd3e32472a939bde9953088b468ec837a1b618bfd431efc8bb714085426ca2d"
+          "sha256": "514401d89f5c256153a2138668d5ad7a6aea67e6dac27e141a95f2440007b530"
         },
         "win32-x64": {
           "fileName": "xpack-realpath-9.1.0-1-win32-x64.zip",
@@ -147,7 +147,7 @@
           "build": "{{ properties.commandBashBuild }}",
           "build-develop": "{{ properties.commandBashBuild }} --develop",
           "publish": "echo publish"
-       }
+        }
       },
       "darwin-x64": {
         "inherit": [

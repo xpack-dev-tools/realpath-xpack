@@ -173,11 +173,11 @@
         },
         "actions": {
           "build": [
-            "[ -f "/.dockerenv" ] && apt-get install --yes make",
+            "[ -f '/.dockerenv' ] && apt-get install --yes make",
             "{{ properties.commandBashBuild }}"
           ],
           "build-develop": [
-            "[ -f "/.dockerenv" ] && apt-get install --yes make",
+            "[ -f '/.dockerenv' ] && apt-get install --yes make",
             "{{ properties.commandBashBuild }} --develop"
           ]
         }

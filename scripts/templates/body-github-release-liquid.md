@@ -4,7 +4,7 @@ Version **{{ XBB_RELEASE_VERSION }}** is a maintenance release of the **xPack GN
 
 Or (TODO: edit!):
 
-Version **{{ XBB_RELEASE_VERSION }}** is a new release of the **xPack GNU realpath** package, following the upstream GNU realpath [release](https://github.com/realpath/ninja/releases/tag/v1.Y.Z).
+Version **{{ XBB_RELEASE_VERSION }}** is a new release of the **xPack GNU realpath** package, following the upstream GNU coreutils [release](https://ftp.gnu.org/gnu/coreutils/).
 
 [Continue reading »](TODO: edit, add URL!)
 

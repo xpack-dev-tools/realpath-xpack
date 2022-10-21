@@ -432,15 +432,8 @@ Install the binaries on all platforms.
 On GNU/Linux and macOS systems, use:
 
 ```sh
-.../xpack-realpath-9.1.0-1/bin/ninja --version
-9.1.0
-```
-
-On Windows use:
-
-```dos
-...\xpack-realpath-9.1.0-1\bin\ninja --version
-9.1.0
+.../xpack-realpath-9.1.0-1/bin/grealpath --version
+realpath (GNU coreutils) 9.1
 ```
 
 ## Create a new GitHub pre-release draft

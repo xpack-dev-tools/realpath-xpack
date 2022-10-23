@@ -71,7 +71,7 @@
       "grealpath": "./.content/bin/grealpath"
     },
     "devDependencies": {
-      "@xpack-dev-tools/xbb-helper": "^0.8.0"
+      "@xpack-dev-tools/xbb-helper": "^0.8.1"
     },
     "properties": {
       "appName": "GNU realpath",
@@ -143,7 +143,7 @@
         "hidden": true,
         "actions": {
           "deep-clean": "rm -rf {{ properties.buildFolderRelativePathPosix }}",
-          "install": "xpm install",
+          "install": "xpm install --config {{ configuration.name }}",
           "build": "{{ properties.commandBashBuild }}",
           "build-develop": "{{ properties.commandBashBuild }} --develop",
           "publish": "echo publish"

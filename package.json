@@ -71,7 +71,7 @@
       "grealpath": "./.content/bin/grealpath"
     },
     "devDependencies": {
-      "@xpack-dev-tools/xbb-helper": "^0.8.4"
+      "@xpack-dev-tools/xbb-helper": "^0.9.2"
     },
     "properties": {
       "appName": "GNU realpath",
@@ -135,8 +135,7 @@
       "common-dependencies": {
         "hidden": true,
         "devDependencies": {
-          "@xpack-dev-tools/cmake": "3.22.6-1.1",
-          "@xpack-dev-tools/ninja-build": "1.11.1-1.1"
+          "@xpack-dev-tools/pkg-config": "0.29.2-1.1"
         }
       },
       "common-actions": {
@@ -170,17 +169,8 @@
           "common-actions"
         ],
         "devDependencies": {
-          "@xpack-dev-tools/gcc": "12.2.0-1.1"
-        },
-        "actions": {
-          "build": [
-            "[ -f '/.dockerenv' ] && apt-get install --yes make",
-            "{{ properties.commandBashBuild }}"
-          ],
-          "build-develop": [
-            "[ -f '/.dockerenv' ] && apt-get install --yes make",
-            "{{ properties.commandBashBuild }} --develop"
-          ]
+          "@xpack-dev-tools/gcc": "12.2.0-1.1",
+          "@xpack-dev-tools/patchelf": "0.15.0-1.1"
         }
       },
       "linux-arm64": {

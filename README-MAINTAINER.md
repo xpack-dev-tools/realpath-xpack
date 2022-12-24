@@ -4,7 +4,7 @@
 
 # Maintainer info
 
-## Project repository
+## Get project sources
 
 The project is hosted on GitHub:
 
@@ -14,7 +14,7 @@ To clone the stable branch (`xpack`), run the following commands in a
 terminal (on Windows use the _Git Bash_ console):
 
 ```sh
-rm -rf ~/Work/realpath-xpack.git; \
+rm -rf ~/Work/realpath-xpack.git && \
 git clone https://github.com/xpack-dev-tools/realpath-xpack.git \
   ~/Work/realpath-xpack.git
 ```
@@ -22,12 +22,34 @@ git clone https://github.com/xpack-dev-tools/realpath-xpack.git \
 For development purposes, clone the `xpack-develop` branch:
 
 ```sh
-rm -rf ~/Work/realpath-xpack.git; \
-mkdir -p ~/Work; \
+rm -rf ~/Work/realpath-xpack.git && \
+mkdir -p ~/Work && \
 git clone \
   --branch xpack-develop \
   https://github.com/xpack-dev-tools/realpath-xpack.git \
   ~/Work/realpath-xpack.git
+```
+
+## Get helper sources
+
+The project has a dependency to a common **helper**; clone the
+`xpack-develop` branch and link it to the central xPacks store:
+
+```sh
+rm -rf ~/Work/xbb-helper-xpack.git && \
+mkdir -p ~/Work && \
+git clone \
+  --branch xpack-develop \
+  https://github.com/xpack-dev-tools/xbb-helper-xpack.git \
+  ~/Work/xbb-helper-xpack.git && \
+xpm link -C ~/Work/xbb-helper-xpack.git
+```
+
+Or, if the repo was already cloned:
+
+```sh
+git -C ~/Work/xbb-helper-xpack.git pull
+xpm link -C ~/Work/xbb-helper-xpack.git
 ```
 
 ## Prerequisites
@@ -37,10 +59,8 @@ A recent [xpm](https://xpack.github.io/xpm/), which is a portable
 
 ## Release schedule
 
-The xPack GNU realpath release schedule generally follows the original GitHub
-[releases](https://github.com/realpath/ninja/releases/), but with a
-few weeks filter, which means that releases that are overridden in
-a few weeks may be skipped.
+The xPack GNU realpath release schedule generally follows the original GNU coreutils
+[releases](https://ftp.gnu.org/gnu/coreutils/).
 
 ## How to make new releases
 
@@ -67,7 +87,7 @@ No need to add a tag here, it'll be added when the release is created.
 
 ### Check the latest upstream release
 
-Check the GNU realpath GitHub [Releases](https://github.com/realpath/ninja/releases/)
+Check the GNU realpath GitHub [Releases](https://ftp.gnu.org/gnu/coreutils/)
 and compare the the xPack [Releases](https://github.com/xpack-dev-tools/realpath-xpack/releases/).
 
 ### Increase the version
@@ -115,19 +135,26 @@ No op.
 ## Build
 
 The builds currently run on 5 dedicated machines (Intel GNU/Linux,
-Arm 32 GNU/Linux, Arm 64 GNU/Linux, Intel macOS and Arm macOS).
+Arm 32 GNU/Linux, Arm 64 GNU/Linux, Intel macOS and Apple Silicon macOS).
 
 ### Development run the build scripts
 
-Before the real build, run a test build on all platforms.
+Before the real build, run test builds on all platforms.
+
+#### Visual Studio Code
+
+All actions are defined as **xPack actions** and can be conveniently
+triggered via the VS Code graphical interface, using the
+[xPack extension](https://marketplace.visualstudio.com/items?itemName=ilg-vscode.xpack).
 
 #### Intel macOS
 
-For Intel macOS, first run the build on the development machine (`wksi`):
+For Intel macOS, first run the build on the development machine
+(`wksi`, a recent macOS):
 
 ```sh
 # Update the build scripts.
-git pull -C ~/Work/realpath-xpack.git
+git -C ~/Work/realpath-xpack.git pull
 
 xpm install -C ~/Work/realpath-xpack.git
 
@@ -141,7 +168,9 @@ caffeinate xpm run build-develop --config darwin-x64 -C ~/Work/realpath-xpack.gi
 
 When functional, push the `xpack-develop` branch to GitHub.
 
-Run the build on the production machine (`xbbmi`):
+Run the native build on the production machine
+(`xbbmi`, an older macOS);
+start a VS Code remote session, or connect with a terminal:
 
 ```sh
 caffeinate ssh xbbmi
@@ -149,7 +178,7 @@ caffeinate ssh xbbmi
 
 ```sh
 # Update the build scripts (or clone them the first time).
-git pull -C ~/Work/realpath-xpack.git
+git -C ~/Work/realpath-xpack.git pull
 
 xpm install -C ~/Work/realpath-xpack.git
 
@@ -171,7 +200,9 @@ total 1080
 
 #### Apple Silicon macOS
 
-Run the build on the production machine (`xbbma`):
+Run the native build on the production machine
+(`xbbma`, an older macOS);
+start a VS Code remote session, or connect with a terminal:
 
 ```sh
 caffeinate ssh xbbma
@@ -179,7 +210,7 @@ caffeinate ssh xbbma
 
 ```sh
 # Update the build scripts (or clone them the first time).
-git pull -C ~/Work/realpath-xpack.git
+git -C ~/Work/realpath-xpack.git pull
 
 xpm install -C ~/Work/realpath-xpack.git
 
@@ -201,7 +232,8 @@ total 1056
 
 #### Intel GNU/Linux
 
-Run the build on the production machine (`xbbli`):
+Run the docker build on the production machine (`xbbli`);
+start a VS Code remote session, or connect with a terminal:
 
 ```sh
 caffeinate ssh xbbli
@@ -211,7 +243,7 @@ Build the GNU/Linux binaries:
 
 ```sh
 # Update the build scripts (or clone them the first time).
-git pull -C ~/Work/realpath-xpack.git
+git -C ~/Work/realpath-xpack.git pull
 
 xpm install -C ~/Work/realpath-xpack.git
 
@@ -231,11 +263,14 @@ total 1480
 -rw-rw-rw- 1 ilg ilg    110 May 17 09:49 xpack-realpath-9.1.0-1-linux-x64.tar.gz.sha
 ```
 
+##### Build the Windows binaries
+
 There are no Windows binaries.
 
 #### Arm GNU/Linux 64-bit
 
-Run the build on the production machine (`xbbla64`):
+Run the docker build on the production machine (`xbbla64`);
+start a VS Code remote session, or connect with a terminal:
 
 ```sh
 caffeinate ssh xbbla64
@@ -243,7 +278,7 @@ caffeinate ssh xbbla64
 
 ```sh
 # Update the build scripts (or clone if the first time)
-git pull -C ~/Work/realpath-xpack.git
+git -C ~/Work/realpath-xpack.git pull
 
 xpm install -C ~/Work/realpath-xpack.git
 
@@ -265,7 +300,8 @@ total 532
 
 #### Arm GNU/Linux 32-bit
 
-Run the build on the production machine (`xbbla32`):
+Run the docker build on the production machine (`xbbla32`);
+start a VS Code remote session, or connect with a terminal:
 
 ```sh
 caffeinate ssh xbbla32
@@ -273,7 +309,7 @@ caffeinate ssh xbbla32
 
 ```sh
 # Update the build scripts (or clone if the first time)
-git pull -C ~/Work/realpath-xpack.git
+git -C ~/Work/realpath-xpack.git pull
 
 xpm install -C ~/Work/realpath-xpack.git
 
@@ -340,7 +376,14 @@ screen -S ga
 # Ctrl-a Ctrl-d
 ```
 
-Check that both the project Git and the submodule are pushed to GitHub.
+For `xbbli` & `xbbla64` start two runners:
+
+```sh
+~/actions-runners/xpack-dev-tools/1/run.sh &
+~/actions-runners/xpack-dev-tools/2/run.sh &
+```
+
+Check that the project is pushed to GitHub.
 
 To trigger the GitHub Actions build, use the xPack action:
 
@@ -353,11 +396,11 @@ To trigger the GitHub Actions build, use the xPack action:
 This is equivalent to:
 
 ```sh
-bash ~/Work/realpath-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbli
-bash ~/Work/realpath-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbla64
-bash ~/Work/realpath-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbla32
-bash ~/Work/realpath-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbmi
-bash ~/Work/realpath-xpack.git/scripts/helper/trigger-workflow-build.sh --machine xbbma
+bash ~/Work/realpath-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbli
+bash ~/Work/realpath-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbla64
+bash ~/Work/realpath-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbla32
+bash ~/Work/realpath-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbmi
+bash ~/Work/realpath-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-build.sh --machine xbbma
 ```
 
 These scripts require the `GITHUB_API_DISPATCH_TOKEN` variable to be present
@@ -391,9 +434,9 @@ To trigger the GitHub Actions tests, use the xPack actions:
 These are equivalent to:
 
 ```sh
-bash ~/Work/realpath-xpack.git/scripts/helper/tests/trigger-workflow-test-prime.sh
-bash ~/Work/realpath-xpack.git/scripts/helper/tests/trigger-workflow-test-docker-linux-intel.sh
-bash ~/Work/realpath-xpack.git/scripts/helper/tests/trigger-workflow-test-docker-linux-arm.sh
+bash ~/Work/realpath-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-test-prime.sh
+bash ~/Work/realpath-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-test-docker-linux-intel.sh
+bash ~/Work/realpath-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-workflow-test-docker-linux-arm.sh
 ```
 
 These scripts require the `GITHUB_API_DISPATCH_TOKEN` variable to be present
@@ -416,7 +459,7 @@ To trigger the Travis test, use the xPack action:
 This is equivalent to:
 
 ```sh
-bash ~/Work/realpath-xpack.git/scripts/helper/tests/trigger-travis-macos.sh
+bash ~/Work/realpath-xpack.git/xpacks/xpack-dev-tools-xbb-helper/github-actions/trigger-travis-macos.sh
 ```
 
 This script requires the `TRAVIS_COM_TOKEN` variable to be present
@@ -427,7 +470,23 @@ The test results are available from
 
 ### Manual tests
 
-Install the binaries on all platforms.
+To download the pre-released archive for the specific platform
+and run the tests, use:
+
+```sh
+xpm run test-pre-release
+```
+
+For even more tests, on each platform (MacOS, GNU/Linux, Windows),
+download the archive from
+[pre-releases/test](https://github.com/xpack-dev-tools/pre-releases/releases/tag/test/)
+and check the binaries.
+
+On macOS, remove the `com.apple.quarantine` flag:
+
+```sh
+xattr -dr com.apple.quarantine ${HOME}/Downloads/xpack-*
+```
 
 On GNU/Linux and macOS systems, use:
 
@@ -467,7 +526,7 @@ In the `xpack/web-jekyll` GitHub repo:
 - select the `develop` branch
 - copy the new file to `_posts/releases/realpath`
 - update version and date from last
-[release](https://github.com/realpath/ninja/releases/).
+[release](https://ftp.gnu.org/gnu/coreutils/).
 
 If any, refer to closed
 [issues](https://github.com/xpack-dev-tools/realpath-xpack/issues/).
@@ -562,7 +621,7 @@ When the release is considered stable, promote it as `latest`:
 
 In case the previous version is not functional and needs to be unpublished:
 
-- `npm unpublish @xpack-dev-tools/realpath@9.1.0-1.X`
+- `npm unpublish @xpack-dev-tools/realpath@9.1.0-1.1`
 
 ## Update the Web
 
@@ -589,7 +648,7 @@ In case the previous version is not functional and needs to be unpublished:
   [release](https://xpack.github.io/realpath/releases/)
 - click the **Tweet** button
 
-## Remove pre-release binaries
+## Remove the pre-release binaries
 
 - go to <https://github.com/xpack-dev-tools/pre-releases/releases/tag/test/>
 - remove the test binaries
@@ -599,5 +658,5 @@ In case the previous version is not functional and needs to be unpublished:
 Run the xPack action `trigger-workflow-deep-clean`, this
 will remove the build folders on all supported platforms.
 
-The tests results are available from the
+The results are available from the
 [Actions](https://github.com/xpack-dev-tools/realpath-xpack/actions/) page.

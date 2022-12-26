@@ -188,6 +188,32 @@ xpm install --config darwin-x64 -C ~/Work/realpath-xpack.git
 caffeinate xpm run build-develop --config darwin-x64 -C ~/Work/realpath-xpack.git
 ```
 
+The build takes about 5 minutes.
+
+When functional, push the `xpack-develop` branch to GitHub.
+
+Run the native build on the production machine
+(`xbbmi`, an older macOS);
+start a VS Code remote session, or connect with a terminal:
+
+```sh
+caffeinate ssh xbbmi
+```
+
+Repeat the same steps as before.
+
+```sh
+git -C ~/Work/realpath-xpack.git pull && \
+xpm run deep-clean -C ~/Work/realpath-xpack.git && \
+xpm install -C ~/Work/realpath-xpack.git && \
+git -C ~/Work/xbb-helper-xpack.git pull && \
+xpm link -C ~/Work/xbb-helper-xpack.git && \
+xpm run link-deps -C ~/Work/realpath-xpack.git && \
+xpm run deep-clean --config darwin-x64  -C ~/Work/realpath-xpack.git && \
+xpm install --config darwin-x64 -C ~/Work/realpath-xpack.git
+caffeinate xpm run build-develop --config darwin-x64 -C ~/Work/realpath-xpack.git
+```
+
 Several minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
@@ -208,14 +234,16 @@ start a VS Code remote session, or connect with a terminal:
 caffeinate ssh xbbma
 ```
 
+Update the build scripts (or clone them at the first use):
+
 ```sh
-# Update the build scripts (or clone them the first time).
-git -C ~/Work/realpath-xpack.git pull
-
-xpm install -C ~/Work/realpath-xpack.git
-
-xpm run deep-clean --config darwin-arm64 -C ~/Work/realpath-xpack.git
-
+git -C ~/Work/realpath-xpack.git pull && \
+xpm run deep-clean -C ~/Work/realpath-xpack.git && \
+xpm install -C ~/Work/realpath-xpack.git && \
+git -C ~/Work/xbb-helper-xpack.git pull && \
+xpm link -C ~/Work/xbb-helper-xpack.git && \
+xpm run link-deps -C ~/Work/realpath-xpack.git && \
+xpm run deep-clean --config darwin-arm64  -C ~/Work/realpath-xpack.git && \
 xpm install --config darwin-arm64 -C ~/Work/realpath-xpack.git
 caffeinate xpm run build-develop --config darwin-arm64 -C ~/Work/realpath-xpack.git
 ```
@@ -239,18 +267,18 @@ start a VS Code remote session, or connect with a terminal:
 caffeinate ssh xbbli
 ```
 
-Build the GNU/Linux binaries:
+##### Build the GNU/Linux binaries
+
+Update the build scripts (or clone them at the first use):
 
 ```sh
-# Update the build scripts (or clone them the first time).
-git -C ~/Work/realpath-xpack.git pull
-
-xpm install -C ~/Work/realpath-xpack.git
-
-xpm run deep-clean --config linux-x64 -C ~/Work/realpath-xpack.git
-
-xpm install --config linux-x64 -C ~/Work/realpath-xpack.git
-xpm run build-develop --config linux-x64 -C ~/Work/realpath-xpack.git
+git -C ~/Work/realpath-xpack.git pull && \
+xpm run deep-clean -C ~/Work/realpath-xpack.git && \
+xpm run deep-clean --config linux-x64 -C ~/Work/realpath-xpack.git && \
+xpm run docker-prepare --config linux-x64 -C ~/Work/realpath-xpack.git && \
+git -C ~/Work/xbb-helper-xpack.git pull && \
+xpm run docker-link-deps --config linux-x64 -C ~/Work/realpath-xpack.git
+xpm run docker-build-develop --config linux-x64 -C ~/Work/realpath-xpack.git
 ```
 
 Several minutes later, the output of the build script is a compressed
@@ -276,16 +304,16 @@ start a VS Code remote session, or connect with a terminal:
 caffeinate ssh xbbla64
 ```
 
+Update the build scripts (or clone them at the first use):
+
 ```sh
-# Update the build scripts (or clone if the first time)
-git -C ~/Work/realpath-xpack.git pull
-
-xpm install -C ~/Work/realpath-xpack.git
-
-xpm run deep-clean --config linux-arm64 -C ~/Work/realpath-xpack.git
-
-xpm install --config linux-arm64 -C ~/Work/realpath-xpack.git
-xpm run build-develop --config linux-arm64 -C ~/Work/realpath-xpack.git
+git -C ~/Work/realpath-xpack.git pull && \
+xpm run deep-clean -C ~/Work/realpath-xpack.git && \
+xpm run deep-clean --config linux-arm64 -C ~/Work/realpath-xpack.git && \
+xpm run docker-prepare --config linux-arm64 -C ~/Work/realpath-xpack.git && \
+git -C ~/Work/xbb-helper-xpack.git pull && \
+xpm run docker-link-deps --config linux-arm64 -C ~/Work/realpath-xpack.git
+xpm run docker-build-develop --config linux-arm64 -C ~/Work/realpath-xpack.git
 ```
 
 Several minutes later, the output of the build script is a compressed
@@ -307,16 +335,16 @@ start a VS Code remote session, or connect with a terminal:
 caffeinate ssh xbbla32
 ```
 
+Update the build scripts (or clone them at the first use):
+
 ```sh
-# Update the build scripts (or clone if the first time)
-git -C ~/Work/realpath-xpack.git pull
-
-xpm install -C ~/Work/realpath-xpack.git
-
-xpm run deep-clean --config linux-arm -C ~/Work/realpath-xpack.git
-
-xpm install --config linux-arm -C ~/Work/realpath-xpack.git
-xpm run build-develop --config linux-arm -C ~/Work/realpath-xpack.git
+git -C ~/Work/realpath-xpack.git pull && \
+xpm run deep-clean -C ~/Work/realpath-xpack.git && \
+xpm run deep-clean --config linux-arm -C ~/Work/realpath-xpack.git && \
+xpm run docker-prepare --config linux-arm -C ~/Work/realpath-xpack.git && \
+git -C ~/Work/xbb-helper-xpack.git pull && \
+xpm run docker-link-deps --config linux-arm -C ~/Work/realpath-xpack.git
+xpm run docker-build-develop --config linux-arm -C ~/Work/realpath-xpack.git
 ```
 
 Several minutes later, the output of the build script is a compressed

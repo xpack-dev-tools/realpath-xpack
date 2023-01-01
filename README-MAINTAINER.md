@@ -316,7 +316,7 @@ xpm run docker-link-deps --config linux-arm64 -C ~/Work/realpath-xpack.git
 xpm run docker-build-develop --config linux-arm64 -C ~/Work/realpath-xpack.git
 ```
 
-Several minutes later, the output of the build script is a compressed
+About 5 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console
@@ -348,7 +348,7 @@ xpm run docker-link-deps --config linux-arm -C ~/Work/realpath-xpack.git
 xpm run docker-build-develop --config linux-arm -C ~/Work/realpath-xpack.git
 ```
 
-Several minutes later, the output of the build script is a compressed
+About 5 minutes later, the output of the build script is a compressed
 archive and its SHA signature, created in the `deploy` folder:
 
 ```console

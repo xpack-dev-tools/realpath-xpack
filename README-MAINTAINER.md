@@ -272,10 +272,11 @@ Update the build scripts (or clone them at the first use):
 ```sh
 git -C ~/Work/realpath-xpack.git pull && \
 xpm run install -C ~/Work/realpath-xpack.git && \
+git -C ~/Work/xbb-helper-xpack.git pull && \
+xpm link -C ~/Work/xbb-helper-xpack.git && \
 xpm run link-deps -C ~/Work/realpath-xpack.git && \
 xpm run deep-clean --config linux-x64 -C ~/Work/realpath-xpack.git && \
 xpm run docker-prepare --config linux-x64 -C ~/Work/realpath-xpack.git && \
-git -C ~/Work/xbb-helper-xpack.git pull && \
 xpm run docker-link-deps --config linux-x64 -C ~/Work/realpath-xpack.git
 xpm run docker-build-develop --config linux-x64 -C ~/Work/realpath-xpack.git
 ```
@@ -308,10 +309,11 @@ Update the build scripts (or clone them at the first use):
 ```sh
 git -C ~/Work/realpath-xpack.git pull && \
 xpm run install -C ~/Work/realpath-xpack.git && \
+git -C ~/Work/xbb-helper-xpack.git pull && \
+xpm link -C ~/Work/xbb-helper-xpack.git && \
 xpm run link-deps -C ~/Work/realpath-xpack.git && \
 xpm run deep-clean --config linux-arm64 -C ~/Work/realpath-xpack.git && \
 xpm run docker-prepare --config linux-arm64 -C ~/Work/realpath-xpack.git && \
-git -C ~/Work/xbb-helper-xpack.git pull && \
 xpm run docker-link-deps --config linux-arm64 -C ~/Work/realpath-xpack.git
 xpm run docker-build-develop --config linux-arm64 -C ~/Work/realpath-xpack.git
 ```
@@ -340,10 +342,11 @@ Update the build scripts (or clone them at the first use):
 ```sh
 git -C ~/Work/realpath-xpack.git pull && \
 xpm run install -C ~/Work/realpath-xpack.git && \
+git -C ~/Work/xbb-helper-xpack.git pull && \
+xpm link -C ~/Work/xbb-helper-xpack.git && \
 xpm run link-deps -C ~/Work/realpath-xpack.git && \
 xpm run deep-clean --config linux-arm -C ~/Work/realpath-xpack.git && \
 xpm run docker-prepare --config linux-arm -C ~/Work/realpath-xpack.git && \
-git -C ~/Work/xbb-helper-xpack.git pull && \
 xpm run docker-link-deps --config linux-arm -C ~/Work/realpath-xpack.git
 xpm run docker-build-develop --config linux-arm -C ~/Work/realpath-xpack.git
 ```

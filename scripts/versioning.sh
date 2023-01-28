@@ -17,9 +17,9 @@ function application_build_versioned_components()
   # bfdver.h file remains empty.
   XBB_BRANDING="${XBB_APPLICATION_DISTRO_NAME} ${XBB_APPLICATION_NAME} ${XBB_REQUESTED_TARGET_MACHINE}"
 
-  XBB_COREUTILS_VERSION="$(echo "${XBB_RELEASE_VERSION}" | sed -e 's|-.*||' | sed -e 's|[.][0-9][0-9]*$||')"
+  XBB_COREUTILS_VERSION="$(xbb_strip_version_pre_release "${XBB_RELEASE_VERSION}" | sed -e 's|[.][0-9][0-9]*$||')"
 
-  # Keep them in sync with combo archive content.
+  # Keep them in sync with the combo archive content.
   if [[ "${XBB_RELEASE_VERSION}" =~ 9[.]1[.]0-.* ]]
   then
     # -------------------------------------------------------------------------

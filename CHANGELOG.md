@@ -4,7 +4,12 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-01-29
 
+* v9.1.0-2.1 published on npmjs.com
+* b33d925 package.json: update urls for 9.1.0-2.1 release
 * v9.1.0-2 released
+* fae8c70 VERSION 9.1.0-2
+* 66a0364 CHANGELOG update
+* 88ad67d CHANGELOG update
 * b1ad734 README update
 * d92eb79 package.json: bump deps
 * eaf274d .vscode/settings.json: ignoreWords

@@ -218,9 +218,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/realpath-xpack.git/build/darwin-x64/deploy
-total 1080
--rw-r--r--  1 ilg  staff  547972 May 17 09:50 xpack-realpath-9.1.0-2-darwin-x64.tar.gz
--rw-r--r--  1 ilg  staff     111 May 17 09:50 xpack-realpath-9.1.0-2-darwin-x64.tar.gz.sha
+total 432
+-rw-r--r--  1 ilg  staff  215082 Jan 29 09:15 xpack-realpath-9.1.0-1-darwin-x64.tar.gz
+-rw-r--r--  1 ilg  staff     107 Jan 29 09:15 xpack-realpath-9.1.0-1-darwin-x64.tar.gz.sha
 ```
 
 #### Apple Silicon macOS
@@ -251,9 +251,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/realpath-xpack.git/build/darwin-arm64/deploy
-total 1056
--rw-r--r--  1 ilg  staff  533014 May 17 09:49 xpack-realpath-9.1.0-2-darwin-arm64.tar.gz
--rw-r--r--  1 ilg  staff     113 May 17 09:49 xpack-realpath-9.1.0-2-darwin-arm64.tar.gz.sha
+total 416
+-rw-r--r--  1 ilg  staff  208568 Jan 29 09:14 xpack-realpath-9.1.0-1-darwin-arm64.tar.gz
+-rw-r--r--  1 ilg  staff     109 Jan 29 09:14 xpack-realpath-9.1.0-1-darwin-arm64.tar.gz.sha
 ```
 
 #### Intel GNU/Linux
@@ -286,9 +286,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/realpath-xpack.git/build/linux-x64/deploy
-total 1480
--rw-rw-rw- 1 ilg ilg 551495 May 17 09:49 xpack-realpath-9.1.0-2-linux-x64.tar.gz
--rw-rw-rw- 1 ilg ilg    110 May 17 09:49 xpack-realpath-9.1.0-2-linux-x64.tar.gz.sha
+total 196
+-rw-r--r-- 1 ilg ilg 194245 Jan 29 07:14 xpack-realpath-9.1.0-1-linux-x64.tar.gz
+-rw-r--r-- 1 ilg ilg    106 Jan 29 07:14 xpack-realpath-9.1.0-1-linux-x64.tar.gz.sha
 ```
 
 ##### Build the Windows binaries
@@ -323,9 +323,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/realpath-xpack.git/build/linux-arm64/deploy
-total 532
--rw-rw-rw- 1 ilg ilg 538649 May 17 09:51 xpack-realpath-9.1.0-2-linux-arm64.tar.gz
--rw-rw-rw- 1 ilg ilg    112 May 17 09:51 xpack-realpath-9.1.0-2-linux-arm64.tar.gz.sha
+total 196
+-rw-r--r-- 1 ilg ilg 194253 Jan 29 07:18 xpack-realpath-9.1.0-1-linux-arm64.tar.gz
+-rw-r--r-- 1 ilg ilg    108 Jan 29 07:18 xpack-realpath-9.1.0-1-linux-arm64.tar.gz.sha
 ```
 
 #### Arm GNU/Linux 32-bit
@@ -356,9 +356,9 @@ archive and its SHA signature, created in the `deploy` folder:
 
 ```console
 $ ls -l ~/Work/realpath-xpack.git/build/linux-arm/deploy
-total 500
--rw-rw-rw- 1 ilg ilg 506541 May 17 09:51 xpack-realpath-9.1.0-2-linux-arm.tar.gz
--rw-rw-rw- 1 ilg ilg    110 May 17 09:51 xpack-realpath-9.1.0-2-linux-arm.tar.gz.sha
+total 196
+-rw-r--r-- 1 ilg ilg 192859 Jan 29 07:19 xpack-realpath-9.1.0-1-linux-arm.tar.gz
+-rw-r--r-- 1 ilg ilg    106 Jan 29 07:19 xpack-realpath-9.1.0-1-linux-arm.tar.gz.sha
 ```
 
 ### Files cache

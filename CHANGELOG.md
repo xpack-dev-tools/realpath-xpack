@@ -2,9 +2,18 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2023-01-29
+
+* b1ad734 README update
+* d92eb79 package.json: bump deps
+* eaf274d .vscode/settings.json: ignoreWords
+* 827615f package-lock.json: update
+* 0bf51af re-generate workflows
+* 9409903 prepare v9.1.0-2
+* 523bee3 package.json: bump deps
+
 ## 2023-01-28
 
-* v9.1.0-2 prepared
 * ad8fb00 versioning.sh: use versioning functions
 * b0aeae3 README-MAINTAINER remove caffeinate xpm
 

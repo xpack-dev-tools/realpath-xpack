@@ -5,7 +5,6 @@
   "main": "",
   "scripts": {
     "npm-install": "npm install",
-    "git-log": "git log --pretty='%cd * %h %s' --date=short",
     "npm-pack": "npm pack",
     "npm-version-patch": "npm version patch",
     "npm-version-minor": "npm version minor",
@@ -67,7 +66,7 @@
       "grealpath": "./.content/bin/grealpath"
     },
     "devDependencies": {
-      "@xpack-dev-tools/xbb-helper": "^1.4.1"
+      "@xpack-dev-tools/xbb-helper": "^1.4.7"
     },
     "properties": {
       "appName": "GNU realpath",
@@ -96,6 +95,7 @@
       "git-pull-helper": [
         "git -C ${HOME}/Work/xbb-helper-xpack.git pull"
       ],
+      "git-log": "git log --pretty='%cd * %h %s' --date=short",
       "generate-workflows": [
         "mkdir -p .github/workflows/",
         "cp xpacks/xpack-dev-tools-xbb-helper/templates/body-github-pre-releases-test.md .github/workflows/",
@@ -143,7 +143,7 @@
       "common-dependencies": {
         "hidden": true,
         "devDependencies": {
-          "@xpack-dev-tools/pkg-config": "0.29.2-1.1"
+          "@xpack-dev-tools/pkg-config": "0.29.2-2.1"
         }
       },
       "common-actions": {
@@ -210,8 +210,8 @@
         ],
         "devDependencies": {
           "@xpack-dev-tools/clang": "15.0.7-2.1",
-          "@xpack-dev-tools/realpath": "9.1.0-1.1",
-          "@xpack-dev-tools/sed": "4.9.0-1.1"
+          "@xpack-dev-tools/realpath": "9.1.0-2.1",
+          "@xpack-dev-tools/sed": "4.9.0-2.1"
         },
         "actions": {
           "build": "caffeinate {{ properties.commandBashBuild }}",

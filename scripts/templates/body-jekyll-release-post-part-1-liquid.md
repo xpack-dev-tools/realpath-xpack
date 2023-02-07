@@ -7,10 +7,12 @@ summary: "Version **{{ XBB_RELEASE_VERSION }}** is a maintenance release; it fix
 
 summary: "Version **{{ XBB_RELEASE_VERSION }}** is a new release; it follows the upstream release."
 
-coreutils_version: 9.1
-coreutils_date: 2022-04-15
+coreutils_version: "9.1"
+coreutils_date: "2022-04-15"
+
 version: "{{ XBB_RELEASE_VERSION }}"
-npm_subversion: 1
+npm_subversion: "1"
+
 download_url: https://github.com/xpack-dev-tools/realpath-xpack/releases/tag/v{{ XBB_RELEASE_VERSION }}/
 
 date:   {{ RELEASE_DATE }}
@@ -30,7 +32,8 @@ tags:
 
 [The xPack GNU realpath](https://xpack.github.io/realpath/)
 is a standalone cross-platform binary distribution of
-[GNU realpath](http://realpath.org).
+**GNU realpath**, part of
+[GNU core utilities](https://www.gnu.org/software/coreutils/).
 
 There are separate binaries for
 **macOS** (Intel 64-bit, Apple Silicon 64-bit)
@@ -59,7 +62,7 @@ The binary files are available from GitHub [Releases]({% raw %}{{ page.download_
 
 The full details of installing the **xPack GNU realpath** on various platforms
 are presented in the separate
-[Install]({% raw %}{{ site.baseurl }}{% endraw %}/realpath/install/) page.
+[Install]({% raw %}{{ site.baseurl }}{% endraw %}/dev-tools/realpath/install/) page.
 
 ### Easy install
 
@@ -77,7 +80,7 @@ a dependency for a project is quite easy:
 cd my-project
 xpm init # Only at first use.
 
-xpm install @xpack-dev-tools/realpath@latest
+xpm install @xpack-dev-tools/realpath@latest --verbose
 
 ls -l xpacks/.bin
 ```
@@ -85,7 +88,7 @@ ls -l xpacks/.bin
 To install this specific version, use:
 
 ```sh
-xpm install @xpack-dev-tools/realpath@{% raw %}{{ page.version }}.{{ page.npm_subversion }}{% endraw %}
+xpm install @xpack-dev-tools/realpath@{% raw %}{{ page.version }}.{{ page.npm_subversion }}{% endraw %} --verbose
 ```
 
 It is also possible to install Meson Build globally, in the user home folder,
@@ -93,7 +96,7 @@ but this requires xPack aware tools to automatically identify them and
 manage paths.
 
 ```sh
-xpm install --global @xpack-dev-tools/realpath@latest
+xpm install --global @xpack-dev-tools/realpath@latest --verbose
 ```
 
 ### Uninstall
@@ -115,11 +118,11 @@ xpm uninstall --global @xpack-dev-tools/realpath
 ## Compliance
 
 The xPack GNU realpath generally follows the official
-[GNU realpath](http://realpath.org) releases.
+[GNU core utilities](https://ftp.gnu.org/gnu/coreutils/) releases.
 
 The current version is based on:
 
-- GNU realpath version {% raw %}{{ page.coreutils_version }}{% endraw %}
+- GNU core utilities version {% raw %}{{ page.coreutils_version }}{% endraw %}
 from {% raw %}{{ page.coreutils_date }}{% endraw %}.
 
 ## Changes
@@ -171,7 +174,7 @@ relative path.
 ## Documentation
 
 The original documentation is available
-[online](https://realpath.org/manual.html).
+[online](https://www.gnu.org/software/coreutils/manual/).
 
 ## Build
 

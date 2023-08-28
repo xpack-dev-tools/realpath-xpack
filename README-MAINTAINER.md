@@ -198,11 +198,13 @@ git -C ~/Work/xpack-dev-tools/realpath-xpack.git pull
 
 xpm run install -C ~/Work/xpack-dev-tools/realpath-xpack.git
 
-# For backup overhead reasons, on the development machine
-# the builds happen on a separate Work folder.
-rm -rf ~/Work/realpath-[0-9]*-*
+git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull
+xpm link -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git
 
-xpm install --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
+xpm run link-deps -C ~/Work/xpack-dev-tools/realpath-xpack.git
+
+xpm run deep-clean --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
+xpm install --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
 xpm run build-develop --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
 ```
 
@@ -211,36 +213,6 @@ For a debug build:
 ```sh
 xpm run build-develop-debug --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
 ```
-
-When functional, push the `xpack-develop` branch to GitHub.
-
-Run the native build on the production machine
-(`xbbmi`, an older macOS);
-start a VS Code remote session, or connect with a terminal:
-
-```sh
-caffeinate ssh xbbmi
-```
-
-```sh
-# Update the build scripts (or clone them the first time).
-git -C ~/Work/xpack-dev-tools/realpath-xpack.git pull
-
-xpm run install -C ~/Work/xpack-dev-tools/realpath-xpack.git
-
-xpm run deep-clean --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
-
-xpm install --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
-xpm run build-develop --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
-```
-
-For a debug build:
-
-```sh
-xpm run build-develop-debug --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
-```
-
-The build takes about 5 minutes.
 
 When functional, push the `xpack-develop` branch to GitHub.
 
@@ -260,8 +232,9 @@ xpm run install -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
 xpm link -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git && \
 xpm run link-deps -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
+\
 xpm run deep-clean --config darwin-x64  -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
-xpm install --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
+xpm install --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
 xpm run build-develop --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
 ```
 
@@ -293,8 +266,9 @@ xpm run install -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
 xpm link -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git && \
 xpm run link-deps -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
+\
 xpm run deep-clean --config darwin-arm64  -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
-xpm install --config darwin-arm64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
+xpm install --config darwin-arm64 -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
 xpm run build-develop --config darwin-arm64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
 ```
 
@@ -327,9 +301,10 @@ xpm run install -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
 xpm link -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git && \
 xpm run link-deps -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
+\
 xpm run deep-clean --config linux-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
 xpm run docker-prepare --config linux-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
-xpm run docker-link-deps --config linux-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
+xpm run docker-link-deps --config linux-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
 xpm run docker-build-develop --config linux-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
 ```
 
@@ -364,9 +339,10 @@ xpm run install -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
 xpm link -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git && \
 xpm run link-deps -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
+\
 xpm run deep-clean --config linux-arm64 -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
 xpm run docker-prepare --config linux-arm64 -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
-xpm run docker-link-deps --config linux-arm64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
+xpm run docker-link-deps --config linux-arm64 -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
 xpm run docker-build-develop --config linux-arm64 -C ~/Work/xpack-dev-tools/realpath-xpack.git
 ```
 
@@ -397,9 +373,10 @@ xpm run install -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
 git -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git pull && \
 xpm link -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git && \
 xpm run link-deps -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
+\
 xpm run deep-clean --config linux-arm -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
 xpm run docker-prepare --config linux-arm -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
-xpm run docker-link-deps --config linux-arm -C ~/Work/xpack-dev-tools/realpath-xpack.git
+xpm run docker-link-deps --config linux-arm -C ~/Work/xpack-dev-tools/realpath-xpack.git && \
 xpm run docker-build-develop --config linux-arm -C ~/Work/xpack-dev-tools/realpath-xpack.git
 ```
 

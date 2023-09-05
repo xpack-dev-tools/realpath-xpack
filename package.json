@@ -1,6 +1,6 @@
 {
   "name": "@xpack-dev-tools/realpath",
-  "version": "9.1.0-2.1",
+  "version": "9.4.0-1.1.pre",
   "description": "A binary xPack with the GNU realpath executables",
   "main": "",
   "scripts": {
@@ -32,27 +32,27 @@
     "minimumXpmRequired": "0.16.3",
     "binaries": {
       "destination": "./.content",
-      "baseUrl": "https://github.com/xpack-dev-tools/realpath-xpack/releases/download/v9.1.0-2",
+      "baseUrl": "https://github.com/xpack-dev-tools/realpath-xpack/releases/download/v9.4.0-1",
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "xpack-realpath-9.1.0-2-darwin-arm64.tar.gz",
+          "fileName": "xpack-realpath-9.4.0-1-darwin-arm64.tar.gz",
           "sha256": "09f48de39b8743c71b0fcbe4d6c0aa215005f82bf0f50f18c61b91c67ffa14ea"
         },
         "darwin-x64": {
-          "fileName": "xpack-realpath-9.1.0-2-darwin-x64.tar.gz",
+          "fileName": "xpack-realpath-9.4.0-1-darwin-x64.tar.gz",
           "sha256": "306401430b4d179634db7a739b1b079ea62b8e06784e189a085b1cb48a648d71"
         },
         "linux-arm64": {
-          "fileName": "xpack-realpath-9.1.0-2-linux-arm64.tar.gz",
+          "fileName": "xpack-realpath-9.4.0-1-linux-arm64.tar.gz",
           "sha256": "9b74fff76328fc31b3ee608634a2c9f28b5af146d1452e1f7a00e311a0fad185"
         },
         "linux-arm": {
-          "fileName": "xpack-realpath-9.1.0-2-linux-arm.tar.gz",
+          "fileName": "xpack-realpath-9.4.0-1-linux-arm.tar.gz",
           "sha256": "fc246ce644471a8c00a6fbd9fab188568b745d7540ca74291ae39be0c19d3c57"
         },
         "linux-x64": {
-          "fileName": "xpack-realpath-9.1.0-2-linux-x64.tar.gz",
+          "fileName": "xpack-realpath-9.4.0-1-linux-x64.tar.gz",
           "sha256": "a69e3f39f7f0f418072f6b30b41a377ef9b10faa9611165472725f11e427580b"
         }
       }

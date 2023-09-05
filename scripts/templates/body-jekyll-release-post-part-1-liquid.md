@@ -7,8 +7,8 @@ summary: "Version **{{ XBB_RELEASE_VERSION }}** is a maintenance release; it fix
 
 summary: "Version **{{ XBB_RELEASE_VERSION }}** is a new release; it follows the upstream release."
 
-coreutils_version: "9.1"
-coreutils_date: "2022-04-15"
+coreutils_version: "9.4"
+coreutils_date: "29 Aug 2023"
 
 version: "{{ XBB_RELEASE_VERSION }}"
 npm_subversion: "1"

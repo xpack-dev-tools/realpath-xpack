@@ -4,7 +4,11 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-09-05
 
-* v9.4.0-1 prepared
+* v9.4.0-1 released
+* 04fe23f package.json: bump deps
+* 590422a README update
+* a00001f package-lock.json update
+* 6a9a688 prepare v9.4.0-1
 * a4ecca0 dot.*ignore update
 * 7d01ed5 re-generate workflows
 * e33ab3f READMEs update

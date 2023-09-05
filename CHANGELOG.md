@@ -4,7 +4,11 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-09-05
 
-* v9.4.0-1 released
+* v9.4.0-1.1 published on npmjs.com
+* 3d650ae package.json: update urls for 9.4.0-1.1 release
+* 20f26e7 README update
+* 6b61ab3 CHANGELOG update
+* f22fb8f README update
 * 04fe23f package.json: bump deps
 * 590422a README update
 * a00001f package-lock.json update

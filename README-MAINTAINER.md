@@ -132,7 +132,7 @@ but in the version specific release page.
 
 ### Update version in `package.json` to a pre-release
 
-Use a new version, suffixed by `.pre`.
+Use the new version, suffixed by `pre`, like `9.4.0-1.pre`.
 
 ### Update `CHANGELOG.md`
 

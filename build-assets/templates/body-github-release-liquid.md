@@ -6,6 +6,6 @@ Or (TODO: edit!):
 
 Version **{{ XBB_RELEASE_VERSION }}** is a new release of the **xPack GNU realpath** package, following the upstream GNU coreutils [release](https://ftp.gnu.org/gnu/coreutils/).
 
-[Continue reading »](TODO: edit, add URL!)
+[Continue reading »](will-be-updated-shortly)
 
 _At this moment the binaries are provided for tests only!_

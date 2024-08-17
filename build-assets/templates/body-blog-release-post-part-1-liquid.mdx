@@ -1,23 +1,23 @@
 ---
-title:  xPack GNU realpath v{{ XBB_RELEASE_VERSION }} released
+title:  xPack GNU realpath v{{releaseVersion}} released
 
 TODO: select one summary
 
-summary: "Version **{{ XBB_RELEASE_VERSION }}** is a maintenance release; it fixes <...>."
+summary: "Version **{{releaseVersion}}** is a maintenance release; it fixes ..."
 
-summary: "Version **{{ XBB_RELEASE_VERSION }}** is a new release; it follows the upstream release."
+summary: "Version **{{releaseVersion}}** is a new release; it follows the upstream release."
 
 coreutils_version: "9.4"
 coreutils_date: "29 Aug 2023"
 
-version: "{{ XBB_RELEASE_VERSION }}"
+version: "{{releaseVersion}}"
 npm_subversion: "1"
 
-download_url: https://github.com/xpack-dev-tools/realpath-xpack/releases/tag/v{{ XBB_RELEASE_VERSION }}/
+download_url: https://github.com/xpack-dev-tools/realpath-xpack/releases/tag/v{{releaseVersion}}/
 
 comments: true
 
-date: {{ RELEASE_DATE }}
+date: {{releaseDate}}
 
 # For Jekyll releases selection.
 categories:
@@ -47,7 +47,7 @@ armv6 is not supported)." %}{% endraw %}
 
 ## Download
 
-The binary files are available from GitHub [Releases]({% raw %}{{ page.download_url }}{% endraw %}).
+The binary files are available from GitHub [Releases]({% raw %}{{page.download_url}}{% endraw %}).
 
 ## Prerequisites
 
@@ -64,12 +64,12 @@ The binary files are available from GitHub [Releases]({% raw %}{{ page.download_
 
 The full details of installing the **xPack GNU realpath** on various platforms
 are presented in the separate
-[Install]({% raw %}{{ site.baseurl }}{% endraw %}/dev-tools/realpath/install/) page.
+[Install]({% raw %}{{site.baseurl}}{% endraw %}/dev-tools/realpath/install/) page.
 
 ### Easy install
 
 The easiest way to install GNU realpath is with
-[`xpm`]({% raw %}{{ site.baseurl }}{% endraw %}/xpm/)
+[`xpm`]({% raw %}{{site.baseurl}}{% endraw %}/xpm/)
 by using the **binary xPack**, available as
 [`@xpack-dev-tools/realpath`](https://www.npmjs.com/package/@xpack-dev-tools/realpath)
 from the [`npmjs.com`](https://www.npmjs.com) registry.
@@ -90,7 +90,7 @@ ls -l xpacks/.bin
 To install this specific version, use:
 
 ```sh
-xpm install @xpack-dev-tools/realpath@{% raw %}{{ page.version }}.{{ page.npm_subversion }}{% endraw %} --verbose
+xpm install @xpack-dev-tools/realpath@{% raw %}{{page.version}}.{{page.npm_subversion}}{% endraw %} --verbose
 ```
 
 It is also possible to install Meson Build globally, in the user home folder,
@@ -124,8 +124,8 @@ The xPack GNU realpath generally follows the official
 
 The current version is based on:
 
-- GNU core utilities version {% raw %}{{ page.coreutils_version }}{% endraw %}
-from {% raw %}{{ page.coreutils_date }}{% endraw %}.
+- GNU core utilities version {% raw %}{{page.coreutils_version}}{% endraw %}
+from {% raw %}{{page.coreutils_date}}{% endraw %}.
 
 ## Changes
 

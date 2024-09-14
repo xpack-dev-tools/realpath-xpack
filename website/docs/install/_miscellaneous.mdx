@@ -1,0 +1,56 @@
+
+import CodeBlock from '@theme/CodeBlock';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import customField from '@site/src/libs/customField';
+
+{/* ------------------------------------------------------------------------ */}
+
+## Miscellaneous
+
+<details>
+<summary>Folder hierarchy</summary>
+
+After install, the package creates a folder hierarchy like the following
+(only the first two depth levels are shown):
+
+<Tabs groupId="operating-systems">
+
+<TabItem value="linux" label="GNU/Linux">
+
+<CodeBlock language="console"> {
+`$ tree -L 2 ~/.local/xPacks/\@xpack-dev-tools/realpath/${customField('xpackVersion')}.${customField('npmSubversion')}/.content/
+/home/ilg/.local/xPacks/\@xpack-dev-tools/realpath/${customField('xpackVersion')}.${customField('npmSubversion')}/.content/
+├── README.md
+├── bin
+│   ├── greadlink
+│   └── grealpath
+└── distro-info
+    └── licenses
+
+3 directories, 3 files
+`} </CodeBlock>
+
+</TabItem>
+
+<TabItem value="macos" label="macOS">
+
+<CodeBlock language="console"> {
+`$ tree -L 2 ~/Library/xPacks/\@xpack-dev-tools/realpath/${customField('xpackVersion')}.${customField('npmSubversion')}/.content/
+/Users/ilg/Library/xPacks/\@xpack-dev-tools/realpath/${customField('xpackVersion')}.${customField('npmSubversion')}/.content/
+├── README.md
+├── bin
+│   ├── greadlink
+│   └── grealpath
+└── distro-info
+    └── licenses
+
+4 directories, 3 files
+`} </CodeBlock>
+
+</TabItem>
+
+</Tabs>
+
+</details>

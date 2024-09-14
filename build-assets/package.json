@@ -13,6 +13,13 @@
       "appName": "GNU realpath",
       "appLcName": "realpath",
       "platforms": "linux-x64,linux-arm64,linux-arm,darwin-x64,darwin-arm64",
+      "customFields": {
+        "programName": "realpath",
+        "branding": "realpath (GNU coreutils) ",
+        "$link": "https://ftp.gnu.org/gnu/coreutils/",
+        "coreutilsVersion": "9.5",
+        "coreutilsReleaseDate": "28 Mar 2024"
+      },
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
       "commandBashBuild": "bash {{ properties.dbg }} scripts/build.sh --target {{ configuration.name }} --build-folder {{ properties.buildFolderRelativePathPosix }}",

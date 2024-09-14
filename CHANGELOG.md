@@ -4,7 +4,12 @@ Entries in this file are in reverse chronological order.
 
 ## 2024-09-14
 
-* v9.5.0-1 prepared
+* v9.5.0-1 released
+* e8445d8 build-assets/package*.json updates
+* d4a878d remove workflows/build-win32-x64.yml
+* 25eb9a7 prepare v9.5.0-1
+* 6e75c41 build-assets/package.json: bump deps
+* 4623fcd re-generate workflows
 
 ## 2024-09-12
 

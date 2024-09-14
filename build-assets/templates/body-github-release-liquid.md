@@ -4,7 +4,7 @@ TODO: select one
 
 Version **{{releaseVersion}}** is a maintenance release of the **xPack GNU realpath** package; it fixes ...
 
-Version **{{releaseVersion}}** is a new release of the **xPack GNU realpath** package, following the upstream GNU coreutils [release](https://ftp.gnu.org/gnu/coreutils/).
+Version **{{releaseVersion}}** is a new release of the **xPack GNU realpath** package, following the upstream GNU Core Utilities [release](https://ftp.gnu.org/gnu/coreutils/).
 
 [Continue reading »](will-be-updated-shortly)
 

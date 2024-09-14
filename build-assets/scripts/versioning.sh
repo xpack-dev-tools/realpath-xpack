@@ -20,7 +20,8 @@ function application_build_versioned_components()
   XBB_COREUTILS_VERSION="$(xbb_strip_version_pre_release "${XBB_RELEASE_VERSION}" | sed -e 's|[.][0-9][0-9]*$||')"
 
   # Keep them in sync with the combo archive content.
-  if [[ "${XBB_RELEASE_VERSION}" =~ 9[.]4[.]0-.* ]]
+  if [[ "${XBB_RELEASE_VERSION}" =~ 9[.]5[.][0-9]-[0-9]* ]] || \
+     [[ "${XBB_RELEASE_VERSION}" =~ 9[.]4[.][0-9]-[0-9]* ]]
   then
     # -------------------------------------------------------------------------
     # Build the native dependencies.
@@ -50,7 +51,7 @@ function application_build_versioned_components()
     coreutils_build "${XBB_COREUTILS_VERSION}"
 
     # -------------------------------------------------------------------------
-  elif [[ "${XBB_RELEASE_VERSION}" =~ 9[.]1[.]0-.* ]]
+  elif [[ "${XBB_RELEASE_VERSION}" =~ 9[.]1[.][0-9]-[0-9]* ]]
   then
     # -------------------------------------------------------------------------
     # Build the native dependencies.

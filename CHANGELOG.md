@@ -2,9 +2,173 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2024-09-14
+
+* v9.5.0-1 prepared
+
+## 2024-09-12
+
+* ca16594 update scripts copyright notices
+
+## 2024-08-17
+
+* 97c12f0 website remove preliminary
+* 415ad22 build-assets/package.json: updates
+* e57a9a8 templates/body-blog update
+* fb4c996 templates/body-github: update
+* b7c77f3 re-generate workflows
+
+## 2024-08-16
+
+* 4beb818 templates/body-github: update
+
+## 2024-08-14
+
+* 120ae63 build-assets/package.json: updates
+
+## 2024-08-09
+
+* 0995c6b READMEs update
+* f8513e0 package.json: git+https
+* 14abf8a build-assets/package.json: updates
+* bcff7b8 templates/body-blog update
+
+## 2024-08-07
+
+* 5ec2df4 build-assets/package.json: updates
+* 9258732 build-assets/package.json: updates
+* f59c7f1 website: preliminary content
+* 6925d64 re-generate workflows
+* e05a3b6 move to build-assets
+
+## 2024-08-06
+
+* 2cfa271 package.json: bump deps
+
+## 2024-08-04
+
+* de9f252 package.json: bump deps
+* 232075c package.json: update generate-workflows
+* 9322b2a templates/jekyll update
+* aafdd34 READMEs update
+* 56479d2 package.json: add actions, bump deps
+
+## 2024-07-27
+
+* 84b6274 package.json: add actions, bump deps
+* 6bfa702 templates/jekyll update
+
+## 2024-07-23
+
+* d805ac6 READMEs update
+* 5569949 .npmignore update
+* 9e236c2 re-generate scripts
+* a8280ef body-jekyll update
+* 63c43a3 re-generate workflows
+* 31a6517 package.json: rework generate workflows
+* 3d6bb29 package.json: loglevel info
+* c04d8a6 package.json: bump deps
+
+## 2024-06-18
+
+* 65f8f09 READMEs update
+
+## 2024-06-17
+
+* 219b9ab package.json: rework generate workflows
+* ad3150a package.json: bump deps
+* cede536 application.sh: update
+
+## 2024-05-23
+
+* b5bdd86 package.json: clang 16.0.6-1.1
+
+## 2024-05-18
+
+* 136228c READMEs update
+* c11a1a1 package.json: XBB_ENVIRONMENT_SKIP_CHECKS
+
+## 2024-05-16
+
+* 230227b READMEs update
+
+## 2024-05-04
+
+* 504f7b4 README update
+
+## 2024-05-03
+
+* 543b8ff README update
+* 129b7d7 package.json: add bison to deps
+
+## 2024-05-02
+
+* 6e75edc package.json: add m4 to deps
+* cd94427 package.json: clang 17.0.6-1.1
+
+## 2024-04-22
+
+* 3a12f02 package.json: bump deps
+* 498573d package.json: xpm-version 0.18.0
+
+## 2024-03-08
+
+* 3ddbd7f package.json: xpm-version 0.18.0
+
+## 2024-03-07
+
+* 264d339 package.json: xpm-version 0.18.0
+* 7892695 package.json: bump deps
+
+## 2024-03-06
+
+* d836bd9 body-jekyll update
+* c706cc5 package.json: bump deps
+
+## 2024-02-07
+
+* 5cd9c5c READMEs update
+* 77f6a00 package.json: bump deps
+
+## 2023-12-03
+
+* 483f93b package.json: bump deps
+* 514c953 re-generate workflows
+
+## 2023-11-12
+
+* ffa8234 package.json: bump deps
+
+## 2023-09-25
+
+* e5483f4 body-jekyll update
+
+## 2023-09-20
+
+* 9b34f61 package.json: bump deps
+
+## 2023-09-16
+
+* d24147a package.json: add linux32
+* d720d62 body-jekyll update
+
+## 2023-09-11
+
+* 4db8123 package.json: bump deps
+
+## 2023-09-08
+
+* a3c14ca package.json: bump deps
+
+## 2023-09-06
+
+* ed1b90c package.json: bump deps
+* c5d02bc READMEs update
+
 ## 2023-09-05
 
-* v9.4.0-1.1 published on npmjs.com
+* 26ea953 9.4.0-1.1
+* 3fc121c CHANGELOG: publish npm v9.4.0-1.1
 * 3d650ae package.json: update urls for 9.4.0-1.1 release
 * 20f26e7 README update
 * 6b61ab3 CHANGELOG update

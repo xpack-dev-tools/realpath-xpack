@@ -14,11 +14,11 @@
       "appLcName": "realpath",
       "platforms": "linux-x64,linux-arm64,linux-arm,darwin-x64,darwin-arm64",
       "customFields": {
-        "programName": "realpath",
+        "programName": "grealpath",
         "branding": "realpath (GNU coreutils) ",
         "$link": "https://ftp.gnu.org/gnu/coreutils/",
-        "coreutilsVersion": "9.5",
-        "coreutilsReleaseDate": "28 Mar 2024"
+        "coreutilsReleaseDate": "28 Mar 2024",
+        "hasTwoNumbersVersion": "true"
       },
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",

@@ -18,7 +18,8 @@
         "branding": "realpath (GNU coreutils) ",
         "$link": "https://ftp.gnu.org/gnu/coreutils/",
         "coreutilsReleaseDate": "28 Mar 2024",
-        "hasTwoNumbersVersion": "true"
+        "hasTwoNumbersVersion": "true",
+        "isSecondaryTool": "true"
       },
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",

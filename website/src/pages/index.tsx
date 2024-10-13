@@ -42,7 +42,7 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout 
-      title={`Hello from realpath`}
+      title={`Welcome to realpath`}
       description="A binary package with the realpath executables">
       <HomepageHeader />
       <main>

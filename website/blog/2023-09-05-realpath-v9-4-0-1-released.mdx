@@ -1,5 +1,6 @@
 ---
 title: xPack GNU realpath v9.4.0-1 released
+seo_title: Version 9.4.0-1 released
 description: Version 9.4.0-1 is a new release of xPack GNU realpath.
 keywords:
   - xpack
@@ -26,17 +27,15 @@ download_url: https://github.com/xpack-dev-tools/realpath-xpack/releases/tag/v9.
 
 ---
 
-<head>
-  <title>{frontMatter.title}</title>
-  <meta property="og:title" content={frontMatter.title} />
-</head>
+import {PageMetadata} from '@docusaurus/theme-common';
+import Image from '@theme/IdealImage';
+import CodeBlock from '@theme/CodeBlock';
 
 Version **9.4.0-1** is a new release; it follows the upstream release.
 
 <!-- truncate -->
 
-import Image from '@theme/IdealImage';
-import CodeBlock from '@theme/CodeBlock';
+<PageMetadata title={frontMatter.seo_title} />
 
 The [xPack GNU realpath](https://xpack-dev-tools.github.io/realpath-xpack/)
 is a standalone cross-platform binary distribution of

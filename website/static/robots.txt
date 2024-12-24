@@ -1,0 +1,7 @@
+Sitemap: https://xpack-dev-tools.github.io/realpath-xpack/sitemap.xml
+
+User-agent: *
+Disallow: /realpath-xpack/blog/archive/
+Disallow: /realpath-xpack/blog/authors/
+Disallow: /realpath-xpack/blog/page/
+Disallow: /realpath-xpack/blog/tags/

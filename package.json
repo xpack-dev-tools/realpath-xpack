@@ -1,7 +1,7 @@
 {
   "name": "@xpack-dev-tools/realpath",
   "version": "9.5.0-1.1",
-  "description": "A binary xPack with the GNU realpath executables",
+  "description": "A binary xpm package with the GNU realpath executables",
   "main": "",
   "scripts": {
     "postversion": "git push origin --all && git push origin --tags",

@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xpack-dev-tools/realpath-xpack.git/"
+    "url": "git+https://github.com/xpack-dev-tools/realpath-xpack.git"
   },
   "bugs": {
-    "url": "https://github.com/xpack-dev-tools/realpath-xpack/issues/"
+    "url": "https://github.com/xpack-dev-tools/realpath-xpack/issues"
   },
-  "homepage": "https://github.com/xpack-dev-tools/realpath-xpack#readme",
+  "homepage": "https://xpack-dev-tools.github.io/realpath-xpack/",
   "keywords": [
     "xpack",
     "gnu",
@@ -25,7 +25,7 @@
   "author": {
     "name": "Liviu Ionescu",
     "email": "ilg@livius.net",
-    "url": "https://github.com/ilg-ul/"
+    "url": "https://github.com/ilg-ul"
   },
   "license": "MIT",
   "xpack": {

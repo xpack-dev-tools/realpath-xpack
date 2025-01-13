@@ -5,8 +5,7 @@
 
 # The xPack GNU realpath
 
-A standalone cross-platform (Windows, macOS, GNU/Linux)
-binary distribution of GNU realpath,
+A standalone, cross-platform (GNU/Linux, macOS) binary distribution of GNU realpath,
 intended for reproducible builds.
 
 ## Project documentation

@@ -73,7 +73,8 @@
     "liquidjs": "^10.19.1"
   },
   "topConfig": {
-    "longName": "GNU realpath"
+    "longName": "GNU realpath",
+    "shortName": "realpath"
   },
   "engines": {
     "node": " >=18.0.0"

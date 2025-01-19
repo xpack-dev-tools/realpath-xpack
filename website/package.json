@@ -56,7 +56,16 @@
       "last 5 safari version"
     ]
   },
-  "websiteConfig": {},
+  "websiteConfig": {
+    "customFields": {
+      "programName": "grealpath",
+      "branding": "realpath (GNU coreutils) ",
+      "$link": "https://ftp.gnu.org/gnu/coreutils/",
+      "coreutilsReleaseDate": "28 Mar 2024",
+      "hasTwoNumbersVersion": "true",
+      "isSecondaryTool": "true"
+    }
+  },
   "engines": {
     "node": ">=18.0"
   }

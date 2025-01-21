@@ -275,7 +275,7 @@ const config: Config = {
           label: 'GitHub',
           items: [
             {
-              label: `realpath-xpack`,
+              label: `realpath-xpack project`,
               href: `https://github.com/xpack-dev-tools/realpath-xpack/`,
             },
             {
@@ -348,7 +348,7 @@ const config: Config = {
               href: 'https://www.paypal.com/donate/?hosted_button_id=5MFRG9ZRBETQ8',
             },
             {
-              label: 'GitHub realpath-xpack',
+              label: 'GitHub realpath-xpack project',
               href: 'https://github.com/xpack-dev-tools/realpath-xpack/',
             },
             {

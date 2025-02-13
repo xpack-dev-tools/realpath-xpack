@@ -52,10 +52,6 @@
           "fileName": "xpack-realpath-9.5.0-1-linux-arm64.tar.gz",
           "sha256": "f8529fe39d362a00207d291b63b505a698932a71fc7d249fdd0ad4b06beacb63"
         },
-        "linux-arm": {
-          "fileName": "xpack-realpath-9.5.0-1-linux-arm.tar.gz",
-          "sha256": "dd4a440de3ba7d95652609f5c6403f7725706a1c40da6aeb285299b5f1ecad43"
-        },
         "linux-x64": {
           "fileName": "xpack-realpath-9.5.0-1-linux-x64.tar.gz",
           "sha256": "16591e53d084b856a5a1df18cf3227a4e3f937b8c4881af0cf6b003238a54321"

@@ -77,7 +77,8 @@
     "isSecondaryTool": "true",
     "$link": "https://ftp.gnu.org/gnu/coreutils/",
     "coreutilsReleaseDate": "28 Mar 2024",
-    "hasTwoNumbersVersion": "true"
+    "hasTwoNumbersVersion": "true",
+    "shareOnTwitter": "true"
   },
   "engines": {
     "node": ">=18.0"

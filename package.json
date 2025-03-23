@@ -71,6 +71,7 @@
   "topConfig": {
     "descriptiveName": "GNU realpath",
     "permalinkName": "realpath",
+    "skipCiTests": "true",
     "useSelfHostedRunners": "true"
   },
   "engines": {

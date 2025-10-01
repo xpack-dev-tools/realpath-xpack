@@ -2,8 +2,251 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2025-10-01
+
+* v9.8.0-1 prepared
+* d0fd8e3 website: re-generate commons
+* 18fa68a re-generate top commons to bump deps
+
+## 2025-03-23
+
+* d4ec48e update /licenses/MIT
+* 25ac611 website: re-generate commons
+* 18a29a3 re-generate commons
+* 413aeda website package.json shareOnTwitter update
+* 37a6f34 website package.json author update
+* c813531 website generate-website-commons update
+
+## 2025-02-24
+
+* 51daf75 website: re-generate descriptive & permalink names
+* cfa1f0c re-generate descriptive & permalink names
+
+## 2025-02-23
+
+* d2bc652 website: re-generate commons
+* fe1cf3c re-generate commons
+
+## 2025-02-18
+
+* 888bac9 package.json: bump minimumXpmRequired 0.20.5
+* 8dd4767 package.json: bump xpm 0.20.5
+
+## 2025-02-14
+
+* 93209a5 re-generate commons
+* 618a047 re-generate commons
+
+## 2025-02-13
+
+* 5345357 re-generate commons
+
+## 2025-02-07
+
+* 37d30b7 website: re-generate commons
+
+## 2025-02-04
+
+* 9709678 website: re-generate commons
+* 4ffbe2d build-assets: update generate-website-blog-post
+
+## 2025-02-03
+
+* abe758e build-assets: bump deps
+* 7a3f73f website: re-generate commons
+* f09bfd1 website: re-generate commons
+
+## 2025-02-02
+
+* bacbd86 website: re-generate commons
+
+## 2025-01-31
+
+* abd9936 website: updates and final common rework
+
+## 2025-01-30
+
+* a3e3906 website: rework getting-started
+* 73c1c8a website: more rework with commons
+
+## 2025-01-29
+
+* 1ba1480 website: more rework with commons
+
+## 2025-01-27
+
+* 779a36a website: cosmetise imports
+
+## 2025-01-26
+
+* 626a35c website: rework with _project
+
+## 2025-01-23
+
+* c5ca59e website: re-generate commons
+
+## 2025-01-22
+
+* 78f1ad0 website: re-generate commons
+
+## 2025-01-21
+
+* 84b6f7f build-assets: cleanup actions
+* 36a43cf website: re-generate commons
+* f2b8f35 website: re-generate commons
+* c7bea71 website: re-generate commons
+
+## 2025-01-20
+
+* 99acc2a re-generate commons
+* c9008ff website: re-generate commons
+
+## 2025-01-19
+
+* eb5d044 website: remove unused customField.js
+* 8a198fc build-assets: move customFields to websiteConfig
+* 3de0236 website: re-generate commons
+
+## 2025-01-17
+
+* a83ffcb website: re-generate commons
+* fdb42df re-generate commons
+* fb24456 website: re-generate commons
+
+## 2025-01-16
+
+* 621ae57 website: re-generate commons
+* 2c1e3c2 re-generate commons
+
+## 2025-01-15
+
+* 21c7d5a re-generate commons
+
+## 2025-01-14
+
+* 1b3247a re-generate commons
+* f08216c re-generate commons
+
+## 2025-01-13
+
+* b62bf92 website: re-generate commons remove Windows
+* 177621c re-generate workflows
+* 1f2c9cc copyright updates
+* fa356da copyright updates
+
+## 2025-01-10
+
+* 7d1172e website: updates
+* 937e2a0 website: updates
+* 1a4b309 website: updates
+
+## 2025-01-09
+
+* 0105aec build-assets/package.json: bump deps
+* ebbe691 website: updates
+
+## 2025-01-02
+
+* 3c9c078 package.json: cosmetics
+* 5b076e9 website: updates
+* b7e0c4f build-assets/package.json: bump deps
+
+## 2024-12-31
+
+* 96674d9 website: updates
+
+## 2024-12-30
+
+* 88c4b6e package.json: bump deps
+* 02b1841 website: updates
+
+## 2024-12-24
+
+* fb71abb website: updates
+* 3cd07ad website: updates
+
+## 2024-12-22
+
+* b537449 website: updates
+* a170d63 website: add _xpack.github.io
+
+## 2024-12-20
+
+* aea984a website: updates
+* 87db73c website: updates
+* 4749d0a website: updates
+
+## 2024-12-11
+
+* abb2064 website: updates
+* 9931224 website/blog updates
+* 8047365 website/blog/_templates/blog-post-release*
+* faa136a build-assets/package.json: bump deps
+
+## 2024-12-04
+
+* df8cf96 website: updates
+
+## 2024-10-15
+
+* 4e33ace website: updates
+* 7153d76 website: updates
+
+## 2024-10-14
+
+* 8f7083a website: updates
+
+## 2024-10-13
+
+* 22f436d website: updates
+* 222263c website: updates
+* 8ece676 website: updates
+
+## 2024-10-11
+
+* 37f3b51 website: updates
+* 7fb4054 website/blog/_templates/blog-post-release*
+* 85c0dfe website/blog/_templates/blog-post-release*
+
+## 2024-10-10
+
+* e07cc9e website: updates
+* 16176ae website: updates
+
+## 2024-10-09
+
+* bfb58be website move blog post templates
+* ab01971 website: updates
+* 111e2aa website: updates
+
+## 2024-10-07
+
+* 5ba6c46 website: updates
+* 63d9a88 website: updates
+
+## 2024-10-06
+
+* dd75de4 website: updates
+* 98c4c09 website: updates
+* 1fbb16f re-generate workflows
+
+## 2024-10-04
+
+* 35e6c54 website: updates
+* 707e87e build-assets/package.json update customFields
+* ff68384 templates/body-blog update
+
+## 2024-09-18
+
+* 5347525 website: updates
+* e23c846 website update
+* dfbf37b build-assets/package.json update customFields
+* 7d7d674 build-assets/templates updates
+
 ## 2024-09-14
 
+* c192dc3 9.5.0-1.1
+* fd31f25 CHANGELOG: publish npm v9.5.0-1.1
 * v9.5.0-1 published on npmjs.com
 * 7fe3fa4 package.json: update urls for 9.5.0-1.1 release
 * e4cad89 website add content

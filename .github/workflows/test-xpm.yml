@@ -4,13 +4,13 @@
 # Automatically generated from npm-packages-helper/templates/*.
 #
 # This file is part of the xPack project (http://xpack.github.io).
-# Copyright (c) 2021 Liviu Ionescu. All rights reserved.
+# Copyright (c) 2021-2025 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
 # If a copy of the license was not distributed with this file, it can
-# be obtained from https://opensource.org/licenses/MIT.
+# be obtained from https://opensource.org/licenses/mit.
 #
 # -----------------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ jobs:
 
 
   darwin-x64-test:
-    name: 'darwin-x64 GNU realpath@${{github.event.inputs.version}} test'
+    name: 'darwin-x64 xPack GNU realpath@${{github.event.inputs.version}} test'
     runs-on: macos-13
 
     steps:
@@ -99,7 +99,7 @@ jobs:
 
 
   darwin-arm64-test:
-    name: 'darwin-arm64 GNU realpath@${{github.event.inputs.version}} test'
+    name: 'darwin-arm64 xPack GNU realpath@${{github.event.inputs.version}} test'
     runs-on: macos-14
 
     steps:
@@ -146,7 +146,7 @@ jobs:
 
 
   linux-x64-test:
-    name: 'linux-x64 GNU realpath@${{github.event.inputs.version}} test'
+    name: 'linux-x64 xPack GNU realpath@${{github.event.inputs.version}} test'
     runs-on: ubuntu-24.04
 
     steps:
@@ -183,7 +183,7 @@ jobs:
 
 
   linux-arm64-test:
-    name: 'linux-arm64 GNU realpath@${{github.event.inputs.version}} test'
+    name: 'linux-arm64 xPack GNU realpath@${{github.event.inputs.version}} test'
     # runs-on: [self-hosted, linux, arm64, xbbla]
     runs-on: ubuntu-24.04-arm
 

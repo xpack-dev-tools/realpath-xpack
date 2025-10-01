@@ -37,24 +37,24 @@
     "minimumXpmRequired": "0.20.5",
     "binaries": {
       "destination": "./.content",
-      "baseUrl": "https://github.com/xpack-dev-tools/realpath-xpack/releases/download/v9.5.0-1",
+      "baseUrl": "https://github.com/xpack-dev-tools/realpath-xpack/releases/download/v9.8.0-1",
       "skip": 1,
       "platforms": {
         "darwin-arm64": {
-          "fileName": "xpack-realpath-9.5.0-1-darwin-arm64.tar.gz",
-          "sha256": "5aacc672cd7f0709a5c6f25721ab4fcb3b6f84989721285b26411630d8427894"
+          "fileName": "xpack-realpath-9.8.0-1-darwin-arm64.tar.gz",
+          "sha256": "66b83d59cfafd72361a7867a2b0651336aa1f93de9699b74d26e306174f7121a"
         },
         "darwin-x64": {
-          "fileName": "xpack-realpath-9.5.0-1-darwin-x64.tar.gz",
-          "sha256": "556f5ec6ddd07c065d30e9ed9646684236a31a05e7502688c308e3478df0f539"
+          "fileName": "xpack-realpath-9.8.0-1-darwin-x64.tar.gz",
+          "sha256": "9a67c4f696a6bf18effdb75b60a1e89453db086ad331d3ab2ddcb3230f553bbd"
         },
         "linux-arm64": {
-          "fileName": "xpack-realpath-9.5.0-1-linux-arm64.tar.gz",
-          "sha256": "f8529fe39d362a00207d291b63b505a698932a71fc7d249fdd0ad4b06beacb63"
+          "fileName": "xpack-realpath-9.8.0-1-linux-arm64.tar.gz",
+          "sha256": "9f2d63a5ae20272eb34b8b4578135df9a78a61b918b3b5af19d0d70cd5c194f6"
         },
         "linux-x64": {
-          "fileName": "xpack-realpath-9.5.0-1-linux-x64.tar.gz",
-          "sha256": "16591e53d084b856a5a1df18cf3227a4e3f937b8c4881af0cf6b003238a54321"
+          "fileName": "xpack-realpath-9.8.0-1-linux-x64.tar.gz",
+          "sha256": "3bfee68e47eb8659f72e21c26b3f40b9897d3a1dbd3bf659c280244387e16e7e"
         }
       }
     },

@@ -4,6 +4,11 @@ Entries in this file are in reverse chronological order.
 
 ## 2025-10-02
 
+* v9.8.0-1.1 published on npmjs.com
+* baf2b92 package.json: update URLs for 9.8.0-1.1 release
+* 16ed833 website: blog post release 9.8.0-1.1 published
+* 33c352e body-github-release update
+* b8eac64 CHANGELOG update
 * c3c5f4b package.json bump deps
 * cad428e package.json bump deps
 

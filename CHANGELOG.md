@@ -2,8 +2,23 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2025-10-02
+
+* c3c5f4b package.json bump deps
+* cad428e package.json bump deps
+
 ## 2025-10-01
 
+* a0f24fc website: update actions durations
+* 2e60a50 package.json bump deps
+* 0ce6ff7 package.json update
+* ab1cc53 package.json update engine
+* 3d116c1 website: update development durations.
+* 8e0fffa website update
+* 9053711 package-lock.json remove
+* 9d11b8b website update
+* 9d4c1b1 package.json bump deps
+* a32b256 prepare v9.8.0-1
 * v9.8.0-1 prepared
 * d0fd8e3 website: re-generate commons
 * 18fa68a re-generate top commons to bump deps

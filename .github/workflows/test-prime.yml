@@ -53,8 +53,8 @@ jobs:
 
   darwin-x64-test:
     name: 'darwin-x64 realpath ${{github.event.inputs.version}} test'
-    # https://github.com/actions/runner-images/blob/main/images/macos/macos-13-Readme.md
-    runs-on: macos-13
+    # https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md
+    runs-on: macos-15-intel
 
     steps:
       - name: 'Show environment'
@@ -63,7 +63,7 @@ jobs:
           sw_vers
           ls -lA /Library/Developer/CommandLineTools/SDKs || true
           ls -lA /Applications
-          sudo xcode-select --switch /Applications/Xcode_14.2.app
+          sudo xcode-select --switch /Applications/Xcode_16.4.app
           xcode-select --print-path
           xcodebuild -version || true
           pkgutil --pkg-info=com.apple.pkg.CLTools_Executables || true
@@ -101,8 +101,8 @@ jobs:
 
   darwin-arm64-test:
     name: 'darwin-arm64 realpath ${{github.event.inputs.version}} test'
-    # https://github.com/actions/runner-images/blob/main/images/macos/macos-14-Readme.md
-    runs-on: macos-14
+    # https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md
+    runs-on: macos-15
 
     steps:
       - name: 'Show environment'
@@ -111,7 +111,7 @@ jobs:
           sw_vers
           ls -lA /Library/Developer/CommandLineTools/SDKs || true
           ls -lA /Applications
-          sudo xcode-select --switch /Applications/Xcode_15.4.app
+          sudo xcode-select --switch /Applications/Xcode_16.4.app
           xcode-select --print-path
           xcodebuild -version || true
           pkgutil --pkg-info=com.apple.pkg.CLTools_Executables || true

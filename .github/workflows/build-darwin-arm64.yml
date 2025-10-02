@@ -69,7 +69,7 @@ jobs:
   darwin-arm64-build:
     name: 'darwin-arm64 realpath ${{github.event.inputs.version}} build'
     timeout-minutes: 2880 # 2 days
-    runs-on: macos-14
+    runs-on: macos-15
     env:
       XBB_ENVIRONMENT_MACOSX_DEPLOYMENT_TARGET: '11.0'
     steps:
@@ -144,8 +144,8 @@ jobs:
 
   darwin-arm64-test:
     name: 'darwin-arm64 realpath ${{github.event.inputs.version}} test'
-    # https://github.com/actions/runner-images/blob/main/images/macos/macos-14-Readme.md
-    runs-on: macos-14
+    # https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md
+    runs-on: macos-15
     needs: [darwin-arm64-build]
 
     steps:

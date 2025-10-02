@@ -50,7 +50,7 @@ function application_build_versioned_components()
     xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
 
     XBB_COREUTILS_INSTALL_REALPATH_ONLY="y"
-    # https://ftp.gnu.org/gnu/coreutils/
+    # https://ftpmirror.gnu.org/gnu/coreutils/
     coreutils_build "${XBB_COREUTILS_VERSION}"
 
     # -------------------------------------------------------------------------
@@ -81,7 +81,7 @@ function application_build_versioned_components()
     xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
 
     XBB_COREUTILS_INSTALL_REALPATH_ONLY="y"
-    # https://ftp.gnu.org/gnu/coreutils/
+    # https://ftpmirror.gnu.org/gnu/coreutils/
     coreutils_build "${XBB_COREUTILS_VERSION}"
 
     # -------------------------------------------------------------------------
@@ -111,7 +111,7 @@ function application_build_versioned_components()
     xbb_set_libraries_install_path "${XBB_DEPENDENCIES_INSTALL_FOLDER_PATH}"
 
     XBB_COREUTILS_INSTALL_REALPATH_ONLY="y"
-    # https://ftp.gnu.org/gnu/coreutils/
+    # https://ftpmirror.gnu.org/gnu/coreutils/
     coreutils_build "${XBB_COREUTILS_VERSION}"
 
     # -------------------------------------------------------------------------

@@ -421,23 +421,6 @@ The test results are available from the
 After executing the prime tests, download the test results and compare
 with previous runs.
 
-#### Additional macOS tests
-
-Since GitHub Actions provides a limited range of versions for the macOS
-runner, the multi-version macOS tests execute on Travis.
-
-To trigger the Travis test, execute the **trigger-travis-macos** xpm action:
-
-```sh
-xpm run trigger-travis-macos -C ~/Work/xpack-dev-tools/realpath-xpack.git/build-assets
-```
-
-This script requires the `TRAVIS_COM_TOKEN` variable to be present
-in the environment.
-
-The test results are available from
-[Travis CI](https://app.travis-ci.com/github/xpack-dev-tools/realpath-xpack/builds/).
-
 ### Manual tests
 
 To download the pre-released archive for the specific platform

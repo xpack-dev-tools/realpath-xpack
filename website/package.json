@@ -76,7 +76,7 @@
     "programName": "grealpath",
     "branding": "realpath (GNU coreutils) ",
     "isSecondaryTool": "true",
-    "$link": "https://ftp.gnu.org/gnu/coreutils/",
+    "$link": "https://ftpmirror.gnu.org/gnu/coreutils/",
     "coreutilsReleaseDate": "22 Sep 2025",
     "hasTwoNumbersVersion": "true",
     "shareOnTwitter": "true"

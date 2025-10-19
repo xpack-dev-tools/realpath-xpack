@@ -16,6 +16,9 @@ import CommonGetProjectSources from '@site/docs/_common/_get-project-sources.mdx
 import CommonGetHelperSources from '@site/docs/_common/_get-helper-sources-details.mdx';
 import CommonGenerateTopCommons from '@site/docs/_common/_generate-top-commons.mdx';
 import CommonGenerateWebsiteCommons from '@site/docs/_common/_generate-website-commons.mdx';
+import CommonUpdateTopCommons from '@site/docs/_common/_update-top-commons.mdx';
+import CommonUpdateWebsiteCommons from '@site/docs/_common/_update-website-commons.mdx';
+
 import CommonPublishWebsite from '@site/docs/_common/_publish-website.mdx';
 import CommonBuildWebsiteLocally from '@site/docs/_common/_build-website-locally.mdx';
 
@@ -92,6 +95,10 @@ as described above.
 Check the latest versions at https://github.com/xpack-dev-tools/ and
 update the dependencies in `build-assets/package.json`.
 
+<CommonGenerateTopCommons />
+
+<CommonGenerateWebsiteCommons />
+
 <ProjectCheckUpstreamRelease/>
 
 <CommonIncreaseVersion />
@@ -106,14 +113,9 @@ is <code>9.8.0-1</code>.
 
 <CommonUpdateWebsiteConfig />
 
-<CommonGenerateTopCommons />
+<CommonUpdateTopCommons />
 
-<CommonGenerateWebsiteCommons />
-
-### Commit the website changes
-
-- **Stage** `website` and top `README.md`
-- **Commit** with the message _**website: regenerate commons**_
+<CommonUpdateWebsiteCommons />
 
 <CommonStartLocalWebServer />
 
@@ -151,19 +153,6 @@ triggered via the VS Code graphical interface, utilising the
 
 <ProjectPatches/>
 
-### Restart the Docker daemons
-
-If, for any reason, the Docker builds need to be cancelled, it is very
-likely that some processes will continue to execute in the background.
-
-To completely terminate them, and ensure that Docker executes
-from a clean slate, restart the Docker daemons on all GNU/Linux
-machines:
-
-```sh
-sudo systemctl restart docker
-```
-
 ### Verify if both projects are pushed
 
 Verify that both the **current project** and the **helper** are
@@ -188,6 +177,9 @@ export XBB_ENVIRONMENT_SKIP_CHECKS="y"
 
 ```sh
 rm -rf ~/Work/xpack-dev-tools/realpath-xpack.git/package-lock.json
+```
+
+```sh
 rm -rf ~/Work/xpack-dev-tools/realpath-xpack.git/build-assets/package-lock.json
 git -C ~/Work/xpack-dev-tools/realpath-xpack.git pull
 
@@ -198,7 +190,7 @@ xpm link -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git
 
 xpm run link-deps -C ~/Work/xpack-dev-tools/realpath-xpack.git/build-assets
 
-xpm run deep-clean --config darwin-x64  -C ~/Work/xpack-dev-tools/realpath-xpack.git/build-assets && \
+xpm run deep-clean --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git/build-assets && \
 xpm install --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git/build-assets && \
 xpm run build-development --config darwin-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git/build-assets
 ```
@@ -262,16 +254,18 @@ caffeinate ssh ampere
 In `website/docs/_project/_development-durations.mdx`, update
 the durations of the builds.
 
-Commit with the message _**website: update development durations**_.
+Commit with the message _**website: update development durations**_
 
 ### Update the trees in the Installation Guide page
 
 Copy the trees displayed at the end of the test builds and paste to the
 **Folder hierarchy** section within the web file:
 
-- `website/docs/_project/_folders-hierarchies-linux.mdx`
-- `website/docs/_project/_folders-hierarchies-macos.mdx`
+<ul>
+<li> <code>website/docs/_project/_folders-hierarchies-linux.mdx</code></li>
+<li> <code>website/docs/_project/_folders-hierarchies-macos.mdx</code></li>
 
+</ul>
 
 If present, replace the actual version
 (such as **9.8.0-1.1**) with the following expression:
@@ -289,7 +283,7 @@ via Homebrew, and create a link to `/usr/local/bin`.
 :::
 
 
-Commit with the message _**website: update folder hierarchies**_.
+Commit with the message _**website: update folder hierarchies**_
 
 ### Update the list of links in top package.json
 
@@ -298,7 +292,7 @@ sequence, for each platform (macOS, GNU/Linux),
 and check the
 differences compared to the repository.
 
-Commit if necessary with the message _**package.json: update executables links**_.
+Commit if necessary with the message _**package.json: update executables links**_
 
 ### How to build a debug version
 
@@ -324,7 +318,7 @@ place them in the XBB cache (`Work/cache`) and restart the build.
 
 ## Execute the production builds
 
-The automation is provided by GitHub Actions.
+The automation is provided by GitHub Actions on GitHub-hosted runners.
 
 ### Publish the helper
 
@@ -383,7 +377,7 @@ The workflow results and logs are available from the
 Update the values in `website/docs/_project/_github-actions-durations.mdx`
 with those shown by GitHub Actions.
 
-Commit with the message _**website: update actions durations**_.
+Commit with the message _**website: update actions durations**_
 
 The resulting binaries are available for testing from
 [pre-releases/test](https://github.com/xpack-dev-tools/pre-releases/releases/tag/test/).
@@ -392,20 +386,20 @@ The resulting binaries are available for testing from
 
 ### Automated tests
 
-The automation is provided by GitHub Actions.
+The automation is provided by GitHub Actions on GitHub-hosted runners.
 
 To trigger the GitHub Actions tests, execute the xpm actions:
 
 <ul>
 <li><b>trigger-workflow-test-prime</b></li>
 <li><b>trigger-workflow-test-docker-linux-x64</b></li>
-<li><b>trigger-workflow-test-docker-linux-arm</b></li>
+<li><b>trigger-workflow-test-docker-linux-arm64</b></li>
 </ul>
 
 ```sh
 xpm run trigger-workflow-test-prime -C ~/Work/xpack-dev-tools/realpath-xpack.git/build-assets
 xpm run trigger-workflow-test-docker-linux-x64 -C ~/Work/xpack-dev-tools/realpath-xpack.git/build-assets
-xpm run trigger-workflow-test-docker-linux-arm -C ~/Work/xpack-dev-tools/realpath-xpack.git/build-assets
+xpm run trigger-workflow-test-docker-linux-arm64 -C ~/Work/xpack-dev-tools/realpath-xpack.git/build-assets
 ```
 
 The scripts behind these actions require the `GITHUB_API_DISPATCH_TOKEN` variable to be present
@@ -431,6 +425,11 @@ git -C ~/Work/xpack-dev-tools/realpath-xpack.git pull
 xpm run install -C ~/Work/xpack-dev-tools/realpath-xpack.git/build-assets
 xpm run test-pre-release -C ~/Work/xpack-dev-tools/realpath-xpack.git/build-assets
 ```
+
+:::caution
+Since the builds were performed on the latest GitHub macOS runners,
+it is strongly recommended to also execute the tests on an older macOS 11 machine.
+:::
 
 For additional tests, on each platform,
 download the archive from
@@ -483,17 +482,10 @@ watching the realpath-xpack project.
 
 <CommonPrepareNewBlogPost />
 
-### Update the web install page
-
-- Check and possibly update the output of the `--version` runs in
-  - `website/docs/install/_project/_automatic-install-quick-test.mdx`
-  - `website/docs/install/_project/_manual-install-quick-test.mdx`
-- **Commit** with the message _**website: update quick tests**_
-
 ### Check the list of links in top package.json
 
 - Open the top `package.json` file
-- Check if the links in the `bin` property cover the actual binaries
+- Check if the links in the `xpack.executables` property cover the actual binaries
 - If necessary, also check on Windows
 
 ### Update the package.json list of binaries
@@ -527,7 +519,7 @@ Execute the **trigger-workflow-test-xpm** xpm action:
 xpm run trigger-workflow-test-xpm -C ~/Work/xpack-dev-tools/realpath-xpack.git/build-assets
 ```
 
-This will install the package via `xpm install` on all supported platforms.
+This will test if the package can be installed via `xpm install` on all supported platforms.
 
 The test results are available from the
 [GitHub Actions](https://github.com/xpack-dev-tools/realpath-xpack/actions) page.

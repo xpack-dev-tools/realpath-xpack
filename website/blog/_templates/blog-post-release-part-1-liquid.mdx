@@ -1,8 +1,8 @@
 ---
 
-title: xPack {{packageConfig.descriptiveName}} v{{xpackVersion}} released
+title: {{packageConfig.descriptiveName}} v{{xpackVersion}} released
 seo_title: Version {{xpackVersion}} released
-description: Version {{xpackVersion}} is a TODO new/maintenance release.
+description: Version {{xpackVersion}} is a TODO maintenance/new release.
 keywords:
   - xpack
   - {{packageConfig.permalinkName}}
@@ -31,6 +31,10 @@ download_url: https://github.com/xpack-dev-tools/realpath-xpack/releases/tag/v{{
 import {PageMetadata} from '@docusaurus/theme-common';
 import Image from '@theme/IdealImage';
 import CodeBlock from '@theme/CodeBlock';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import customField from '@site/src/libs/customField';
 
 import Prerequisites from './_common/_prerequisites-glib-2.28.mdx';
 import DeprecationNotices from './_common/_deprecation-notices-glib-2.28.mdx';
@@ -58,8 +62,8 @@ and **GNU/Linux** (x64 and arm64).
 :::note Raspberry Pi
 
 The main targets for the GNU/Linux Arm
-binaries are the **Raspberry Pi** class devices (aarch64;
-armv6 and armv7l are not supported).
+binaries are the **Raspberry Pi** class devices (aarch64 only;
+armv6 and armv7l are no longer supported).
 
 :::
 
@@ -83,7 +87,7 @@ can be found in the [Install Guide](/docs/install/).
 ## Compliance
 
 The **xPack GNU realpath** is based on the official
-[](https://ftp.gnu.org/gnu/coreutils/) sources.
+[](https://ftpmirror.gnu.org/gnu/coreutils/) sources.
 
 The current version is based on:
 
@@ -130,7 +134,6 @@ Before publishing, a set of simple tests were performed on an exhaustive
 set of platforms. The results are available from:
 
 - [GitHub Actions](https://github.com/xpack-dev-tools/realpath-xpack/actions/)
-- [Travis CI](https://app.travis-ci.com/github/xpack-dev-tools/realpath-xpack/builds/)
 
 ## Tests
 

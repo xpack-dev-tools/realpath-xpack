@@ -68,7 +68,7 @@ xpm link -C ~/Work/xpack-dev-tools/xbb-helper-xpack.git
 ## Release schedule
 
 The xPack GNU realpath release schedule generally follows the original GNU coreutils
-[releases](https://ftp.gnu.org/gnu/coreutils/).
+[releases](https://ftpmirror.gnu.org/gnu/coreutils/).
 
 ## How to make new releases
 
@@ -100,7 +100,7 @@ update the dependencies in `package.json`.
 
 ### Check the latest upstream release
 
-Check the GNU realpath GitHub [Releases](https://ftp.gnu.org/gnu/coreutils/)
+Check the GNU realpath GitHub [Releases](https://ftpmirror.gnu.org/gnu/coreutils/)
 and compare the the xPack [Releases](https://github.com/xpack-dev-tools/realpath-xpack/releases/).
 
 ### Increase the version
@@ -628,7 +628,7 @@ In the `xpack/web-jekyll` GitHub repo:
 - select the `develop` branch
 - copy the new file to `_posts/releases/realpath`
 - update version and date from last
-[release](https://ftp.gnu.org/gnu/coreutils/).
+[release](https://ftpmirror.gnu.org/gnu/coreutils/).
 
 If any, refer to closed
 [issues](https://github.com/xpack-dev-tools/realpath-xpack/issues/).

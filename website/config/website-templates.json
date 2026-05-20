@@ -1,0 +1,9 @@
+{
+  "branding": "realpath (GNU coreutils) ",
+  "coreutilsReleaseDate": "22 Sep 2025",
+  "programName": "grealpath",
+  "$link": "https://ftpmirror.gnu.org/gnu/coreutils/",
+  "hasTwoNumbersVersion": true,
+  "isSecondaryTool": true,
+  "shareOnTwitter": true
+}

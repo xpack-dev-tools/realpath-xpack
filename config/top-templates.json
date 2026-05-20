@@ -1,0 +1,8 @@
+{
+  "descriptiveName": "xPack GNU realpath",
+  "permalinkName": "realpath",
+  "preferredName": "xPack GNU realpath",
+  "upstreamDescriptiveName": "GNU realpath",
+  "skipCiTests": true,
+  "useSelfHostedRunners": false
+}

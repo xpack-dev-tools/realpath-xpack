@@ -40,8 +40,11 @@ function application_build_versioned_components()
 
     xbb_set_target "requested"
 
-    # https://ftp.gnu.org/pub/gnu/libiconv/
-    libiconv_build "1.18"
+    if [ "${XBB_HOST_PLATFORM}" != "darwin" ]
+    then
+      # https://ftp.gnu.org/pub/gnu/libiconv/
+      libiconv_build "1.18"
+    fi
 
     # -------------------------------------------------------------------------
     # Build the application binaries.
